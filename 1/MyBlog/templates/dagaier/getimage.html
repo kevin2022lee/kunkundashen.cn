@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="../static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../static/js/tableExport.js"></script>
+	<script src="../static/js/jquery.base64.js"></script>
+	
+    <title>Dagaier Image Solver--获取达盖尔照片地址</title>
+	
+</head>
+
+<body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#btnExport").click(function(){
+            $("#dge_image").tableExport({
+                type:'excel',
+                escape:'false',
+                fileName:'达盖尔'+(new Date().getMonth()+1)+'-'+new Date().getDate()
+                });
+        });
+            });
+</script>
+
+<div class="container">
+{% extends "bocai/base.html" %}     
+{% block content %} 
+
+<div class="panel">
+
+<div class= "well">
+<table class="table" id="dge_image">
+<tr>
+{%for images_name in images_names%}
+<th>
+{{images_name}}
+</th>
+{%endfor%}
+</tr>
+
+{% for content in contents %}
+<tr>
+<td>{{content}}</td>
+</tr>
+{%endfor%}
+
+</table>
+
+
+<hr>
+<button type="button" id="btnExport" class="btn btn-primary">导出成表格</button>
+</div>
+
+</div>
+</div>
+
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,2006 @@
+{% extends "primer3/base.html" %} 
+{% block content %}
+ <title>多序列multiPCR引物设计--序列预览</title>
+<script type="text/javascript">
+        $(function () {
+            var pretime0 = $('#pretime0').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime0').html(pretime0);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime0').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime0').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime0').html(pretime0);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime0').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime0').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime0').html(pretime0);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime0').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime0').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+<script type="text/javascript">
+        $(function () {
+            var pretime1 = $('#pretime1').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime1').html(pretime1);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime1').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime1').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime1').html(pretime1);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime1').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime1').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime1').html(pretime1);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime1').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime1').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+<!--js sytle-->
+<script type="text/javascript">
+        $(function () {
+            var pretime2 = $('#pretime2').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime2').html(pretime2);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime2').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime2').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime2').html(pretime2);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime2').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime2').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime2').html(pretime2);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime2').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime2').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+
+<script type="text/javascript">
+        $(function () {
+            var pretime3 = $('#pretime3').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime3').html(pretime3);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime3').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime3').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime3').html(pretime3);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime3').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime3').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime3').html(pretime3);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime3').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime3').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+<script type="text/javascript">
+        $(function () {
+            var pretime4 = $('#pretime4').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime4').html(pretime4);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime4').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime4').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime4').html(pretime4);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime4').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime4').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime4').html(pretime4);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime4').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime4').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>    
+ <script type="text/javascript">
+        $(function () {
+            var pretime5 = $('#pretime5').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime5').html(pretime5);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime5').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime5').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime5').html(pretime5);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime5').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime5').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime5').html(pretime5);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime5').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime5').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+<script type="text/javascript">
+        $(function () {
+            var pretime6 = $('#pretime6').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime6').html(pretime6);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime6').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime6').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime6').html(pretime6);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime6').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime6').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime6').html(pretime6);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime6').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime6').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+<script type="text/javascript">
+        $(function () {
+            var pretime7 = $('#pretime7').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime7').html(pretime7);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime7').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime7').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime7').html(pretime7);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime7').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime7').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime7').html(pretime7);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime7').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime7').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+ <script type="text/javascript">
+        $(function () {
+            var pretime8 = $('#pretime8').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime8').html(pretime8);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime8').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime8').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime8').html(pretime8);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime8').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime8').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime8').html(pretime8);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime8').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime8').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>   
+<script type="text/javascript">
+        $(function () {
+            var pretime9 = $('#pretime9').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime9').html(pretime9);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime9').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime9').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime9').html(pretime9);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime9').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime9').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime9').html(pretime9);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime9').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime9').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+<script type="text/javascript">
+        $(function () {
+            var pretime10 = $('#pretime10').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime10').html(pretime10);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime10').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime10').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime10').html(pretime10);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime10').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime10').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime10').html(pretime10);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime10').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime10').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+<script type="text/javascript">
+        $(function () {
+            var pretime11 = $('#pretime11').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime11').html(pretime11);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime11').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime11').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime11').html(pretime11);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime11').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime11').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime11').html(pretime11);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime11').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime11').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>    
+<script type="text/javascript">
+        $(function () {
+            var pretime12 = $('#pretime12').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime12').html(pretime12);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime12').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime12').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime12').html(pretime12);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime12').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime12').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime12').html(pretime12);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime12').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime12').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>
+ <script type="text/javascript">
+        $(function () {
+            var pretime13 = $('#pretime13').html();
+            //farward引物样式
+            $('.fmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime13').html(pretime13);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime13').html();
+                    var newHtml = html.replace(regExp, '<span class="fhighlight">' + matchText + '</span>');
+                    $('#pretime13').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".fhighlight").size() > 1) {
+                            var _top = $(".fhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            //internal 引物样式
+            
+            $('.imatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime13').html(pretime13);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime13').html();
+                    var newHtml = html.replace(regExp, '<span class="ihighlight">' + matchText + '</span>');
+                    $('#pretime13').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".ihighlight").size() > 1) {
+                            var _top = $(".ihighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+            //reverse 引物样式
+            $('.rmatch').each(function () {
+                $(this).click(function(){
+                    $('#pretime13').html(pretime13);
+                    var matchText = $(this).text();
+                    //alert(matchText);
+                    var regExp = new RegExp(matchText, 'g');
+                    var html = $('#pretime13').html();
+                    var newHtml = html.replace(regExp, '<span class="rhighlight">' + matchText + '</span>');
+                    $('#pretime13').html(newHtml);
+                    flag = 1;
+
+                    if (flag) {
+                        if ($(".rhighlight").size() > 1) {
+                            var _top = $(".rhighlight").eq(0).offset().top;
+                            $("html,body").animate({
+                                "scrollTop": _top
+                                }, 500)
+                            }
+                        }
+                    
+                    })
+            });
+            
+        });
+    </script>          
+<style type="text/css">
+        .fhighlight { background: url("../site_medias/imgs/forward_bg_r.png") repeat-x; color: black; font-size:20px; }
+        .rhighlight { background: url("../site_medias/imgs/reverse_bg_r.png") repeat-x; color: black; font-size:20px;}
+        .ihighlight { background: url("../site_medias/imgs/internal_bg_r.png") repeat-x;  color: black; font-size:20px;}
+</style>
+ <div class="panel panel-info" >
+<div class="panel-heading">
+<b>多序列PCR引物设计结果</b>
+</div>
+<div class="well well-lg" style="padding:20px;height:auto;">
+
+
+<table class="table table-border">
+  <caption>序列1引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime0">
+    {{inputseqs.0}}
+    </div>
+    </td>
+    </tr>
+
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.0.PRIMER_LEFT_SEQUENCE_0.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.0.PRIMER_LEFT_SEQUENCE_0.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.0.PRIMER_LEFT_SEQUENCE_0.2}}</a></td>
+    </tr>
+
+
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.0.PRIMER_RIGHT_SEQUENCE_0.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.0.PRIMER_RIGHT_SEQUENCE_RC_0.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.0.PRIMER_RIGHT_SEQUENCE_0.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.0.PRIMER_RIGHT_SEQUENCE_RC_0.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.0.PRIMER_RIGHT_SEQUENCE_0.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.0.PRIMER_RIGHT_SEQUENCE_RC_0.2}}</a></td>
+    </tr>
+  
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.0.PRIMER_INTERNAL_SEQUENCE_0.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.0.PRIMER_INTERNAL_SEQUENCE_0.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.0.PRIMER_INTERNAL_SEQUENCE_0.2}}</a></td>
+
+    </tr>
+
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.0.PRIMER_PAIR_PRODUCT_SIZE_0.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.0.PRIMER_PAIR_PRODUCT_SIZE_0.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.0.PRIMER_PAIR_PRODUCT_SIZE_0.2}}</td>
+
+    </tr>
+
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.0.PRIMER_PAIR_COMPL_ANY_TH_0.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.0.PRIMER_PAIR_COMPL_ANY_TH_0.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.0.PRIMER_PAIR_COMPL_ANY_TH_0.2}}</td>
+
+    </tr>
+
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.0.PRIMER_PAIR_PENALTY_0.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.0.PRIMER_PAIR_PENALTY_0.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.0.PRIMER_PAIR_PENALTY_0.2}}</td>
+
+    </tr> 
+    
+  </tbody>
+</table>
+
+<table class="table table-border">
+  <caption>序列2引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime1">
+    {{inputseqs.1}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.1.PRIMER_LEFT_SEQUENCE_1.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.1.PRIMER_LEFT_SEQUENCE_1.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.1.PRIMER_LEFT_SEQUENCE_1.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.1.PRIMER_RIGHT_SEQUENCE_1.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.1.PRIMER_RIGHT_SEQUENCE_RC_1.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.1.PRIMER_RIGHT_SEQUENCE_1.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.1.PRIMER_RIGHT_SEQUENCE_RC_1.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.1.PRIMER_RIGHT_SEQUENCE_1.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.1.PRIMER_RIGHT_SEQUENCE_RC_1.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.1.PRIMER_INTERNAL_SEQUENCE_1.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.1.PRIMER_INTERNAL_SEQUENCE_1.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.1.PRIMER_INTERNAL_SEQUENCE_1.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.1.PRIMER_PAIR_PRODUCT_SIZE_1.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.1.PRIMER_PAIR_PRODUCT_SIZE_1.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.1.PRIMER_PAIR_PRODUCT_SIZE_1.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.1.PRIMER_PAIR_COMPL_ANY_TH_1.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.1.PRIMER_PAIR_COMPL_ANY_TH_1.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.1.PRIMER_PAIR_COMPL_ANY_TH_1.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.1.PRIMER_PAIR_PENALTY_1.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.1.PRIMER_PAIR_PENALTY_1.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.1.PRIMER_PAIR_PENALTY_1.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{% if table_nums > 2 %}
+<table class="table table-border">
+  <caption>序列3引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime2">
+    {{inputseqs.2}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.2.PRIMER_LEFT_SEQUENCE_2.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.2.PRIMER_LEFT_SEQUENCE_2.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.2.PRIMER_LEFT_SEQUENCE_2.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.2.PRIMER_RIGHT_SEQUENCE_2.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.2.PRIMER_RIGHT_SEQUENCE_RC_2.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.2.PRIMER_RIGHT_SEQUENCE_2.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.2.PRIMER_RIGHT_SEQUENCE_RC_2.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="}}list_dict_right_seqs.2.PRIMER_RIGHT_SEQUENCE_2.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.2.PRIMER_RIGHT_SEQUENCE_RC_2.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.2.PRIMER_INTERNAL_SEQUENCE_2.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.2.PRIMER_INTERNAL_SEQUENCE_2.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.2.PRIMER_INTERNAL_SEQUENCE_2.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.2.PRIMER_PAIR_PRODUCT_SIZE_2.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.2.PRIMER_PAIR_PRODUCT_SIZE_2.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.2.PRIMER_PAIR_PRODUCT_SIZE_2.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.2.PRIMER_PAIR_COMPL_ANY_TH_2.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.2.PRIMER_PAIR_COMPL_ANY_TH_2.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.2.PRIMER_PAIR_COMPL_ANY_TH_2.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.2.PRIMER_PAIR_PENALTY_2.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.2.PRIMER_PAIR_PENALTY_2.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.2.PRIMER_PAIR_PENALTY_2.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+<!--四个表格逻辑-->
+{%endif%}
+{% if table_nums > 3 %}
+<table class="table table-border">
+  <caption>序列4引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime3">
+    {{inputseqs.3}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.3.PRIMER_LEFT_SEQUENCE_3.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.3.PRIMER_LEFT_SEQUENCE_3.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.3.PRIMER_LEFT_SEQUENCE_3.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.3.PRIMER_RIGHT_SEQUENCE_3.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.3.PRIMER_RIGHT_SEQUENCE_RC_3.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.3.PRIMER_RIGHT_SEQUENCE_3.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.3.PRIMER_RIGHT_SEQUENCE_RC_3.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.3.PRIMER_RIGHT_SEQUENCE_3.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.3.PRIMER_RIGHT_SEQUENCE_RC_3.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.3.PRIMER_INTERNAL_SEQUENCE_3.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.3.PRIMER_INTERNAL_SEQUENCE_3.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.3.PRIMER_INTERNAL_SEQUENCE_3.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.3.PRIMER_PAIR_PRODUCT_SIZE_3.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.3.PRIMER_PAIR_PRODUCT_SIZE_3.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.3.PRIMER_PAIR_PRODUCT_SIZE_3.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.3.PRIMER_PAIR_COMPL_ANY_TH_3.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.3.PRIMER_PAIR_COMPL_ANY_TH_3.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.3.PRIMER_PAIR_COMPL_ANY_TH_3.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.3.PRIMER_PAIR_PENALTY_3.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.3.PRIMER_PAIR_PENALTY_3.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.3.PRIMER_PAIR_PENALTY_3.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--五个表格逻辑-->
+
+{% if table_nums > 4 %}
+<table class="table table-border">
+  <caption>序列5引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime4">
+    {{inputseqs.4}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.4.PRIMER_LEFT_SEQUENCE_4.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.4.PRIMER_LEFT_SEQUENCE_4.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.4.PRIMER_LEFT_SEQUENCE_4.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.4.PRIMER_RIGHT_SEQUENCE_4.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.4.PRIMER_RIGHT_SEQUENCE_RC_4.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.4.PRIMER_RIGHT_SEQUENCE_4.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.4.PRIMER_RIGHT_SEQUENCE_RC_4.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.4.PRIMER_RIGHT_SEQUENCE_4.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.4.PRIMER_RIGHT_SEQUENCE_RC_4.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.4.PRIMER_INTERNAL_SEQUENCE_4.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.4.PRIMER_INTERNAL_SEQUENCE_4.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.4.PRIMER_INTERNAL_SEQUENCE_4.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.4.PRIMER_PAIR_PRODUCT_SIZE_4.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.4.PRIMER_PAIR_PRODUCT_SIZE_4.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.4.PRIMER_PAIR_PRODUCT_SIZE_4.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.4.PRIMER_PAIR_COMPL_ANY_TH_4.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.4.PRIMER_PAIR_COMPL_ANY_TH_4.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.4.PRIMER_PAIR_COMPL_ANY_TH_4.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.4.PRIMER_PAIR_PENALTY_4.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.4.PRIMER_PAIR_PENALTY_4.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.4.PRIMER_PAIR_PENALTY_4.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--六个表格逻辑-->
+
+{% if table_nums > 5 %}
+<table class="table table-border">
+  <caption>序列6引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+     <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime5">
+    {{inputseqs.5}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.5.PRIMER_LEFT_SEQUENCE_5.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.5.PRIMER_LEFT_SEQUENCE_5.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.5.PRIMER_LEFT_SEQUENCE_5.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.5.PRIMER_RIGHT_SEQUENCE_5.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.5.PRIMER_RIGHT_SEQUENCE_RC_5.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.5.PRIMER_RIGHT_SEQUENCE_5.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.5.PRIMER_RIGHT_SEQUENCE_RC_5.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.5.PRIMER_RIGHT_SEQUENCE_5.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.5.PRIMER_RIGHT_SEQUENCE_RC_5.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.5.PRIMER_INTERNAL_SEQUENCE_5.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.5.PRIMER_INTERNAL_SEQUENCE_5.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.5.PRIMER_INTERNAL_SEQUENCE_5.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.5.PRIMER_PAIR_PRODUCT_SIZE_5.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.5.PRIMER_PAIR_PRODUCT_SIZE_5.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.5.PRIMER_PAIR_PRODUCT_SIZE_5.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.5.PRIMER_PAIR_COMPL_ANY_TH_5.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.5.PRIMER_PAIR_COMPL_ANY_TH_5.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.5.PRIMER_PAIR_COMPL_ANY_TH_5.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.5.PRIMER_PAIR_PENALTY_5.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.5.PRIMER_PAIR_PENALTY_5.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.5.PRIMER_PAIR_PENALTY_5.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--七个表格逻辑-->
+
+{% if table_nums > 6 %}
+<table class="table table-border">
+  <caption>序列7引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+      <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime6">
+    {{inputseqs.6}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.6.PRIMER_LEFT_SEQUENCE_6.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.6.PRIMER_LEFT_SEQUENCE_6.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.6.PRIMER_LEFT_SEQUENCE_6.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.6.PRIMER_RIGHT_SEQUENCE_6.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.6.PRIMER_RIGHT_SEQUENCE_RC_6.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.6.PRIMER_RIGHT_SEQUENCE_6.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.6.PRIMER_RIGHT_SEQUENCE_RC_6.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.6.PRIMER_RIGHT_SEQUENCE_6.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.6.PRIMER_RIGHT_SEQUENCE_RC_6.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.6.PRIMER_INTERNAL_SEQUENCE_6.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.6.PRIMER_INTERNAL_SEQUENCE_6.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.6.PRIMER_INTERNAL_SEQUENCE_6.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.6.PRIMER_PAIR_PRODUCT_SIZE_6.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.6.PRIMER_PAIR_PRODUCT_SIZE_6.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.6.PRIMER_PAIR_PRODUCT_SIZE_6.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.6.PRIMER_PAIR_COMPL_ANY_TH_6.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.6.PRIMER_PAIR_COMPL_ANY_TH_6.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.6.PRIMER_PAIR_COMPL_ANY_TH_6.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.6.PRIMER_PAIR_PENALTY_6.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.6.PRIMER_PAIR_PENALTY_6.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.6.PRIMER_PAIR_PENALTY_6.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--八个表格逻辑-->
+
+{% if table_nums > 7 %}
+<table class="table table-border">
+  <caption>序列8引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+      <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime7">
+    {{inputseqs.7}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.7.PRIMER_LEFT_SEQUENCE_7.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.7.PRIMER_LEFT_SEQUENCE_7.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.7.PRIMER_LEFT_SEQUENCE_7.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.7.PRIMER_RIGHT_SEQUENCE_7.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.7.PRIMER_RIGHT_SEQUENCE_RC_7.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.7.PRIMER_RIGHT_SEQUENCE_7.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.7.PRIMER_RIGHT_SEQUENCE_RC_7.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.7.PRIMER_RIGHT_SEQUENCE_7.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.7.PRIMER_RIGHT_SEQUENCE_RC_7.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.7.PRIMER_INTERNAL_SEQUENCE_7.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.7.PRIMER_INTERNAL_SEQUENCE_7.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.7.PRIMER_INTERNAL_SEQUENCE_7.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.7.PRIMER_PAIR_PRODUCT_SIZE_7.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.7.PRIMER_PAIR_PRODUCT_SIZE_7.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.7.PRIMER_PAIR_PRODUCT_SIZE_7.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.7.PRIMER_PAIR_COMPL_ANY_TH_7.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.7.PRIMER_PAIR_COMPL_ANY_TH_7.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.7.PRIMER_PAIR_COMPL_ANY_TH_7.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.7.PRIMER_PAIR_PENALTY_7.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.7.PRIMER_PAIR_PENALTY_7.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.7.PRIMER_PAIR_PENALTY_7.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--九个表格逻辑-->
+
+{% if table_nums > 8 %}
+<table class="table table-border">
+  <caption>序列9引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+      <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime8">
+    {{inputseqs.8}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.8.PRIMER_LEFT_SEQUENCE_8.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.8.PRIMER_LEFT_SEQUENCE_8.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.8.PRIMER_LEFT_SEQUENCE_8.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.8.PRIMER_RIGHT_SEQUENCE_8.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.8.PRIMER_RIGHT_SEQUENCE_RC_8.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.8.PRIMER_RIGHT_SEQUENCE_8.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.8.PRIMER_RIGHT_SEQUENCE_RC_8.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.8.PRIMER_RIGHT_SEQUENCE_8.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.8.PRIMER_RIGHT_SEQUENCE_RC_8.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.8.PRIMER_INTERNAL_SEQUENCE_8.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.8.PRIMER_INTERNAL_SEQUENCE_8.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.8.PRIMER_INTERNAL_SEQUENCE_8.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.8.PRIMER_PAIR_PRODUCT_SIZE_8.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.8.PRIMER_PAIR_PRODUCT_SIZE_8.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.8.PRIMER_PAIR_PRODUCT_SIZE_8.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.8.PRIMER_PAIR_COMPL_ANY_TH_8.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.8.PRIMER_PAIR_COMPL_ANY_TH_8.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.8.PRIMER_PAIR_COMPL_ANY_TH_8.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.8.PRIMER_PAIR_PENALTY_8.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.8.PRIMER_PAIR_PENALTY_8.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.8.PRIMER_PAIR_PENALTY_8.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--十个表格逻辑-->
+
+{% if table_nums > 9 %}
+<table class="table table-border">
+  <caption>序列10引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+      <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime9">
+    {{inputseqs.9}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.9.PRIMER_LEFT_SEQUENCE_9.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.9.PRIMER_LEFT_SEQUENCE_9.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.9.PRIMER_LEFT_SEQUENCE_9.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.9.PRIMER_RIGHT_SEQUENCE_9.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.9.PRIMER_RIGHT_SEQUENCE_RC_9.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.9.PRIMER_RIGHT_SEQUENCE_9.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.9.PRIMER_RIGHT_SEQUENCE_RC_9.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.9.PRIMER_RIGHT_SEQUENCE_9.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.9.PRIMER_RIGHT_SEQUENCE_RC_9.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.9.PRIMER_INTERNAL_SEQUENCE_9.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.9.PRIMER_INTERNAL_SEQUENCE_9.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.9.PRIMER_INTERNAL_SEQUENCE_9.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.9.PRIMER_PAIR_PRODUCT_SIZE_9.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.9.PRIMER_PAIR_PRODUCT_SIZE_9.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.9.PRIMER_PAIR_PRODUCT_SIZE_9.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.9.PRIMER_PAIR_COMPL_ANY_TH_9.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.9.PRIMER_PAIR_COMPL_ANY_TH_9.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.9.PRIMER_PAIR_COMPL_ANY_TH_9.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.9.PRIMER_PAIR_PENALTY_9.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.9.PRIMER_PAIR_PENALTY_9.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.9.PRIMER_PAIR_PENALTY_9.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--十一个表格逻辑-->
+
+{% if table_nums > 10 %}
+<table class="table table-border">
+  <caption>序列11引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+     <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime10">
+    {{inputseqs.10}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.10.PRIMER_LEFT_SEQUENCE_10.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.10.PRIMER_LEFT_SEQUENCE_10.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.10.PRIMER_LEFT_SEQUENCE_10.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.10.PRIMER_RIGHT_SEQUENCE_10.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.10.PRIMER_RIGHT_SEQUENCE_RC_10.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.10.PRIMER_RIGHT_SEQUENCE_10.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.10.PRIMER_RIGHT_SEQUENCE_RC_10.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.10.PRIMER_RIGHT_SEQUENCE_10.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.10.PRIMER_RIGHT_SEQUENCE_RC_10.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.10.PRIMER_INTERNAL_SEQUENCE_10.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.10.PRIMER_INTERNAL_SEQUENCE_10.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.10.PRIMER_INTERNAL_SEQUENCE_10.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.10.PRIMER_PAIR_PRODUCT_SIZE_10.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.10.PRIMER_PAIR_PRODUCT_SIZE_10.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.10.PRIMER_PAIR_PRODUCT_SIZE_10.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.10.PRIMER_PAIR_COMPL_ANY_TH_10.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.10.PRIMER_PAIR_COMPL_ANY_TH_10.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.10.PRIMER_PAIR_COMPL_ANY_TH_10.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.10.PRIMER_PAIR_PENALTY_10.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.10.PRIMER_PAIR_PENALTY_10.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.10.PRIMER_PAIR_PENALTY_10.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--十二个表格逻辑-->
+
+{% if table_nums > 11 %}
+<table class="table table-border">
+  <caption>序列12引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+        <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime11">
+    {{inputseqs.11}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.11.PRIMER_LEFT_SEQUENCE_11.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.11.PRIMER_LEFT_SEQUENCE_11.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.11.PRIMER_LEFT_SEQUENCE_11.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.11.PRIMER_RIGHT_SEQUENCE_11.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.11.PRIMER_RIGHT_SEQUENCE_RC_11.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.11.PRIMER_RIGHT_SEQUENCE_11.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.11.PRIMER_RIGHT_SEQUENCE_RC_11.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.11.PRIMER_RIGHT_SEQUENCE_11.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.11.PRIMER_RIGHT_SEQUENCE_RC_11.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.11.PRIMER_INTERNAL_SEQUENCE_11.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.11.PRIMER_INTERNAL_SEQUENCE_11.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.11.PRIMER_INTERNAL_SEQUENCE_11.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.11.PRIMER_PAIR_PRODUCT_SIZE_11.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.11.PRIMER_PAIR_PRODUCT_SIZE_11.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.11.PRIMER_PAIR_PRODUCT_SIZE_11.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.11.PRIMER_PAIR_COMPL_ANY_TH_11.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.11.PRIMER_PAIR_COMPL_ANY_TH_11.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.11.PRIMER_PAIR_COMPL_ANY_TH_11.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.11.PRIMER_PAIR_PENALTY_11.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.11.PRIMER_PAIR_PENALTY_11.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.11.PRIMER_PAIR_PENALTY_11.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--十三个表格逻辑-->
+
+{% if table_nums > 12 %}
+<table class="table table-border">
+  <caption>序列13引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+        <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime12">
+    {{inputseqs.12}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.12.PRIMER_LEFT_SEQUENCE_12.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.12.PRIMER_LEFT_SEQUENCE_12.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.12.PRIMER_LEFT_SEQUENCE_12.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.12.PRIMER_RIGHT_SEQUENCE_12.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.12.PRIMER_RIGHT_SEQUENCE_RC_12.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.12.PRIMER_RIGHT_SEQUENCE_12.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.12.PRIMER_RIGHT_SEQUENCE_RC_12.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.12.PRIMER_RIGHT_SEQUENCE_12.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.12.PRIMER_RIGHT_SEQUENCE_RC_12.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.12.PRIMER_INTERNAL_SEQUENCE_12.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.12.PRIMER_INTERNAL_SEQUENCE_12.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.12.PRIMER_INTERNAL_SEQUENCE_12.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.12.PRIMER_PAIR_PRODUCT_SIZE_12.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.12.PRIMER_PAIR_PRODUCT_SIZE_12.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.12.PRIMER_PAIR_PRODUCT_SIZE_12.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.12.PRIMER_PAIR_COMPL_ANY_TH_12.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.12.PRIMER_PAIR_COMPL_ANY_TH_12.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.12.PRIMER_PAIR_COMPL_ANY_TH_12.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.12.PRIMER_PAIR_PENALTY_12.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.12.PRIMER_PAIR_PENALTY_12.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.12.PRIMER_PAIR_PENALTY_12.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+<!--十四个表格逻辑-->
+{% if table_nums > 13 %}
+<table class="table table-border">
+  <caption>序列14引物设计结果</caption>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>方案1</th>
+      <th>方案2</th>
+      <th>方案3</th>
+    </tr>
+  </thead>
+       <tbody>
+    <tr>
+    <td colspan="1" width="10%" style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <b>序列信息</b>
+    </td>
+    <td colspan="3"style="word-break:break-all; word-wrap:break-word; white-space:inherit" >
+    <div id="pretime13">
+    {{inputseqs.13}}
+    </div>
+    </td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>前引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.13.PRIMER_LEFT_SEQUENCE_13.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.13.PRIMER_LEFT_SEQUENCE_13.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="fmatch">{{list_dict_left_seqs.13.PRIMER_LEFT_SEQUENCE_13.2}}</a></td>
+    </tr>
+     <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>后引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.13.PRIMER_RIGHT_SEQUENCE_13.0}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.13.PRIMER_RIGHT_SEQUENCE_RC_13.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.13.PRIMER_RIGHT_SEQUENCE_13.1}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.13.PRIMER_RIGHT_SEQUENCE_RC_13.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="{{list_dict_right_seqs.13.PRIMER_RIGHT_SEQUENCE_13.2}}"  style="cursor:pointer" class="rmatch">{{list_dict_right_seqs_rc.13.PRIMER_RIGHT_SEQUENCE_RC_13.2}}</a></td>
+    </tr>
+    <tr>
+       <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>中间引物</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.13.PRIMER_INTERNAL_SEQUENCE_13.0}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.13.PRIMER_INTERNAL_SEQUENCE_13.1}}</a></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><a title="点击查找引物位置"  style="cursor:pointer" class="imatch">{{list_dict_intnl_seqs.13.PRIMER_INTERNAL_SEQUENCE_13.2}}</a></td>
+    </tr>
+    <tr>
+     <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>产物大小</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.13.PRIMER_PAIR_PRODUCT_SIZE_13.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.13.PRIMER_PAIR_PRODUCT_SIZE_13.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_prdct_sizes.13.PRIMER_PAIR_PRODUCT_SIZE_13.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>发夹结构</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.13.PRIMER_PAIR_COMPL_ANY_TH_13.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.13.PRIMER_PAIR_COMPL_ANY_TH_13.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_compl_anyths.13.PRIMER_PAIR_COMPL_ANY_TH_13.2}}</td>
+    </tr>
+    <tr>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit"><b>二聚体</b></td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.13.PRIMER_PAIR_PENALTY_13.0}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.13.PRIMER_PAIR_PENALTY_13.1}}</td>
+      <td style="word-break:break-all; word-wrap:break-word; white-space:inherit">{{list_dict_pair_penaltys.13.PRIMER_PAIR_PENALTY_13.2}}</td>
+    </tr> 
+  </tbody>
+</table>
+{%else%}
+
+{%endif%}
+</div>
+</div>
+ {% endblock %}

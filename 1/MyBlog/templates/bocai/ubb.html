@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="/static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../static/js/tableExport.js"></script>
+    <script src="../static/js/jquery.base64.js"></script>
+
+
+    <title>Bocai Code Solver--UBB直播代码</title>
+    
+</head>
+
+<body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#btnExport").click(function(){
+            $("#ubb_code").tableExport({
+                type:'excel',
+                escape:'false',
+                fileName:'直播'
+                });
+        });
+            });
+</script>
+
+<div class="container">
+{% extends "bocai/base.html" %}     
+{% block content %} 
+<div class="panel">
+
+<div class= "well">
+
+<label for="html_code">生成的直播UBB源代码</label>
+
+<table class="table table-bordered" id="ubb_code" name="ubb_code" >
+<tbody>
+<tr>
+<td>直播日期</td>
+<td>Html源码预览</td>
+<td>UBB源码</td>
+</tr>
+<tr>
+<td>{{dt}}</td>
+<td>
+{{html_code}}
+</td><td>
+{{ubbs}}
+</td></tr>
+</tbody>
+</table>
+<hr>
+<button type="submit" class="btn btn-primary" id="btnExport" >Export to txt</button>
+</div>
+
+</div>
+</div>
+
+
+{% endblock %}
+</body>
+</html>

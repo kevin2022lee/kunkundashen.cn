@@ -1,0 +1,71 @@
+{% extends "purchaseadmin/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>采购信息管理系统-物料信息一览</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+            <div class="well well-sm">
+
+<table class="table table-bordered">
+  <caption><h3><b><center>采购信息管理系统待录入联系人信息一览表</b></center></h3></caption>
+    <thead>
+    <tr>
+    <th>物料编号</th>
+      <th>物料名称</th>
+      <th>物料编码</th>
+      <th>Cas编号</th>
+      <th>单位</th>
+      <th>最小包装</th>
+      <th>纯度等级</th>
+      <th>录入日期</th>
+      <th>选择联系人</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for material in materials %}
+  <form action="http://{{ localip }}/material_contact/" method="POST">{% csrf_token %}
+    <tr>
+    <td>{{material.id}}<input type="hidden" value="{{material.id}}" name="material_id" /></td>
+     <td>{{material.material}}</td>
+     <td>{{material.code}}</td>
+     <td>{{material.cas}}</td>
+     <td>{{material.unit}}</td>
+     <td>{{material.package}}</td>
+     <td>{{material.grade}}</td>
+     <td>{{material.JD_date|date:"Y-m-d"}}</td>
+     <td>
+     <select name="contact_id">
+     {% for contact in contacts %}
+     <option value="{{contact.id}}">{{contact.contact}}</option>
+     {%endfor%}
+     </select>
+     </td>
+     <td><button type="submit" class="btn btn-primary btn-xs">添加</button></td>
+    </tr>
+    </form>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

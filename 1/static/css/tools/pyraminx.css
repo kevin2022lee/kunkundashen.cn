@@ -1,0 +1,399 @@
+.solverLeftRight {
+	width: 1000px;
+	max-width: 98%;
+	clear: both;
+	margin: auto;
+	min-height: 200px;
+}
+.solverLeft {
+	width: 1000px;
+	max-width: 98%;
+	float: left;
+}
+
+#solution {
+    text-align: center;
+    max-width: 1024px;
+    clear: both;
+    padding-top: 30px;
+    margin: auto;
+}
+.wrapSolutionStep {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+}
+.solutionStep {
+	height: 160px;
+	width: 160px;
+	background: url(http://www.kunkundashen.cn/static/imgs/steps.png) center center no-repeat transparent;
+}
+.stepRotArrow {
+    height: 160px;
+    width: 160px;
+    margin-top: -160px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.steprot0 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot0.png);	}
+.steprot1 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot1.png);	}
+.steprot2 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot2.png);	}
+.steprot3 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot3.png);	}
+.steprot4 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot4.png);	}
+.steprot5 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot5.png);	}
+.steprot6 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot6.png);	}
+.steprot7 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot7.png);	}
+.steprot8 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot8.png);	}
+.steprot9 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot9.png);	}
+.steprot10 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot10.png);	}
+.steprot11 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot11.png);	}
+.steprot12 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot12.png);	}
+.steprot13 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot13.png);	}
+.steprot14 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot14.png);	}
+.steprot15 {	background-image: url(http://www.kunkundashen.cn/static/imgs/steprot15.png);	}
+.solutionStep > div {
+    float: left;
+    width: 19px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.thisRotation {
+    text-align: left;
+    font-size: 20px;
+    color: #777;
+}
+.thisRotation strong{
+	color: #000;
+}
+#step21	{	margin: 15px 0 0 58px;	}
+#step12	{	margin: 15px 0 0 4px;	}
+#step22 {   margin: -12px 0 0 38px;    clear: both;}
+#step25	{	margin: -11px 0 0 1px;	}
+#step19	{	margin: 3px 0 0 -19px;	}
+#step10	{	margin: 3px 0 0 4px;	}
+#step16	{	margin: -10px 0 0 -18px;	}
+#step13	{	margin: -10px 0 0 1px;	}
+#step23	{	margin: -27px 0 0 18px;	clear: both;}
+#step26	{	margin: -25px 0 0 1px;	}
+#step20	{	margin: -12px 0 0 -19px;	}
+#step24	{	margin: -11px 0 0 1px;	}
+#step18	{	margin: 2px 0 0 -19px;	}
+#step9	{	margin: 2px 0 0 4px;	}
+#step15	{	margin: -11px 0 0 -19px;	}
+#step11	{	margin: -12px 0 0 1px;	}
+#step17	{	margin: -24px 0 0 -18px;	}
+#step14	{	margin: -25px 0 0 1px;	}
+
+.steplu.stepclr0 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-lub.png);	}
+.stepru.stepclr0 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-rub.png);	}
+.stepld.stepclr0 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-ldb.png);	}
+.steprd.stepclr0 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-rdb.png);	}
+
+.steplu.stepclr1 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-lug.png);	}
+.stepru.stepclr1 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-rug.png);	}
+.stepld.stepclr1 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-ldg.png);	}
+.steprd.stepclr1 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-rdg.png);	}
+
+.steplu.stepclr3 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-lur.png);	}
+.stepru.stepclr3 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-rur.png);	}
+.stepld.stepclr3 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-ldr.png);	}
+.steprd.stepclr3 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-rdr.png);	}
+
+.steplu.stepclr2 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-luy.png);	}
+.stepru.stepclr2 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-ruy.png);	}
+.stepld.stepclr2 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-ldy.png);	}
+.steprd.stepclr2 {	background-image: url(http://www.kunkundashen.cn/static/imgs/step-rdy.png);	}
+#solutionWrap {
+    color: #222;
+    padding: 10px;
+    clear: both;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+#solutionWrap h4 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0 25px;
+    border-bottom: 2px solid #888;
+}
+#wrapWrapWrapPyra {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 30px 0;
+}
+#wrapWrapPyra {
+
+    width: 650px;
+    position: relative;
+    height: 325px;
+}
+#wrapPyra {
+    padding: 20px;
+    height: 302px;
+    width: 100%;
+}
+.mode3 #wrapPyra {
+	background: url("http://www.kunkundashen.cn/static/imgs/notation.png") top left no-repeat transparent;
+}
+#wrapPyra > div {
+    height: 150px;
+    width: 170px;
+	float: left;
+}
+#wrapPyra > div > div {
+    float: left;
+    width: 58px;
+    text-align: center;
+    font-size: 20px;
+    height: 50;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#wrapPyra > div > div.up {
+    padding-top: 22px;
+    height: 28px;
+}
+#wrapPyra > div > div.down {
+    padding-top: 7px;
+    height: 43px;
+}
+#rotations {
+    width: 100%;
+    height: 320px;
+    position: absolute;
+    top: 0px;
+    background-repeat: no-repeat;
+}
+.mode2 #rotations {
+	display: none;
+}
+#rotations.hint-u {	background-image: url(http://www.kunkundashen.cn/static/imgs/hint-u.png);	}
+#rotations.hint-l {	background-image: url(http://www.kunkundashen.cn/static/imgs/hint-l.png);	}
+#rotations.hint-f {	background-image: url(http://www.kunkundashen.cn/static/imgs/hint-f.png);	}
+#rotations.hint-r {	background-image: url(http://www.kunkundashen.cn/static/imgs/hint-r.png);	}
+#rotations div{
+	min-height: 20px;
+	min-width: 20px;
+	border: 1px solid transparent;
+	opacity: 0.2;
+	float: left;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+}
+#rotations div:hover{
+	opacity: 1;
+}
+#rotu {
+    margin: 43px 0 0 8px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-u.png);
+    width: 40px;
+    height: 40px;
+}
+#rotui {
+	margin: 43px 0 0 200px;
+	background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-ui.png);
+	width: 40px;
+	height: 40px;
+}
+#rotut {
+    margin: 18px 0 0 8px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-ut.png);
+    width: 48px;
+    height: 47px;
+    background-position: center 20px !important;
+}
+#rotl {
+    margin: 0px 0 0 0px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-l.png);
+    width: 55px;
+    height: 21px;
+    clear: both;
+}
+#rotli {
+    margin: 60px 0 0 -3px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-li.png);
+    width: 40px;
+    height: 47px;
+}
+#rotlt {
+    margin: 28px 0 0 22px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-ft.png);
+    width: 48px;
+    height: 48px;
+    background-position: center 2px !important;
+    clear: both;
+}
+#rotf {
+	margin: 0 0 0 113px;
+	background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-l.png);
+	width: 55px;
+	height: 21px;
+}
+#rotfi {
+    margin: 0px 0 0 170px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-fi.png);
+    width: 55px;
+	clear: both;
+    height: 40px;
+}
+#rotft {
+    margin: 18px 0 0 81px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-ft.png);
+    width: 49px;
+    height: 42px;
+}
+#rotr {
+	margin: 0 0 0 113px;
+	background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-l.png);
+	width: 55px;
+	height: 21px;
+}
+#rotri {
+    margin: 59px 0 0 53px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-li.png);
+    width: 40px;
+    height: 48px;
+}
+#rotrt {
+    margin: 18px 0 0 62px;
+    background-image: url(http://www.kunkundashen.cn/static/imgs/arrow-rt.png);
+    width: 49px;
+    height: 42px;
+}
+#muveletekPyra {
+    padding: 15px 0 40px;
+    margin: auto;
+    height: 40px;
+    clear: both;
+    max-width: 98%;
+    text-align: left;
+}
+#muveletekPyra a {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background-color: #3e5972;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 3px 10px;
+    display: inline-block;
+    padding: 7px 19px;
+    color: #fff;
+    text-align: center;
+}
+#muveletekPyra a:hover {
+    background: #527fa9;
+}
+#face0 {
+	clear: both;
+	margin: 0 0 0 170px;
+}
+.up.color0 {	background: url(http://www.kunkundashen.cn/static/imgs/bu.png);	}
+.down.color0 {	background: url(http://www.kunkundashen.cn/static/imgs/bd.png);	}
+.up.color1 {	background: url(http://www.kunkundashen.cn/static/imgs/gu.png);	}
+.down.color1 {	background: url(http://www.kunkundashen.cn/static/imgs/gd.png);	}
+.up.color3 {	background: url(http://www.kunkundashen.cn/static/imgs/ru.png);	}
+.down.color3 {	background: url(http://www.kunkundashen.cn/static/imgs/rd.png);	}
+.up.color2 {	background: url(http://www.kunkundashen.cn/static/imgs/yu.png);	}
+.down.color2 {	background: url(http://www.kunkundashen.cn/static/imgs/yd.png);	}
+.up.color4 {	background: url(http://www.kunkundashen.cn/static/imgs/uu.png);	}
+.down.color4 {	background: url(http://www.kunkundashen.cn/static/imgs/ud.png);	}
+
+.up.color0.hover {	background: url(http://www.kunkundashen.cn/static/imgs/buh.png);	}
+.down.color0.hover {	background: url(http://www.kunkundashen.cn/static/imgs/bdh.png);	}
+.up.color1.hover {	background: url(http://www.kunkundashen.cn/static/imgs/guh.png);	}
+.down.color1.hover {	background: url(http://www.kunkundashen.cn/static/imgs/gdh.png);	}
+.up.color3.hover {	background: url(http://www.kunkundashen.cn/static/imgs/ruh.png);	}
+.down.color3.hover {	background: url(http://www.kunkundashen.cn/static/imgs/rdh.png);	}
+.up.color2.hover {	background: url(http://www.kunkundashen.cn/static/imgs/yuh.png);	}
+.down.color2.hover {	background: url(http://www.kunkundashen.cn/static/imgs/ydh.png);	}
+.up.color4.hover {	background: url(http://www.kunkundashen.cn/static/imgs/uuh.png);	}
+.down.color4.hover {	background: url(http://www.kunkundashen.cn/static/imgs/udh.png);	}
+
+.clr0 {    background-color: blue;	}
+.clr1 {    background-color: green;	}
+.clr3 {    background-color: red;	}
+.clr2 {    background-color: yellow;	}
+
+.duplatolt, .egyszertolt, .nemistolt {
+	clear: both;
+}
+.duplatolt {
+	margin: 0 0 0 56px !important;	
+}
+.egyszertolt {
+	margin: 0 0 0 28px !important;	
+}
+.nemistolt {
+	margin: 0 !important;	
+}
+.middle {
+	margin: 0 0 0 -30px !important;
+}
+.editingColor {
+    display: none;
+    float: right;
+    color: #222;
+    margin: 80px 60px 5px 5px;
+}
+.mode2 .editingColor {
+    display: block;
+}
+span#editcolorText {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #222;
+    border-radius: 3px;
+}
+#solutionWrap h3 {
+    font-size: 24px;
+    font-weight: bold;
+    background: none;
+    margin: 15px;
+}
+
+@media screen and (max-width: 1020px){
+
+	.solverLeftRight {
+		max-width: 100%;
+		width: 100%;
+		float: none;
+	}
+	.solverLeft {
+		width: auto;
+		max-width: 100%;
+		float: none;
+	}
+	.solverRight {
+		display: none;
+	}
+	#wrapWrapWrapPyra {
+		max-width: 100%;
+		overflow-x: auto;
+		width: 600px;
+		padding: 20px 0;
+		margin: auto;
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+

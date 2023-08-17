@@ -1,0 +1,69 @@
+{% extends "vdreport/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>维生素D及钙吸收能力基因检测报告-报告预览打印</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+            <div class="well well-sm">
+
+<table class="table table-bordered">
+  <caption><h3><b><center>维生素D及钙吸收能力基因检测报告系统待打印报告信息一览表</b></center></h3></caption>
+    <thead>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>电话</th>
+      <th>性别</th>
+      <th>接收日期</th>
+      <th>Apal基因检测结果</th>
+      <th>Taql基因检测结果</th>
+      <th>Bsml基因检测结果</th>
+      <th>Fokl基因检测结果</th>
+      <th>维生素推荐摄入量</th>
+      <th>钙推荐摄入量</th>
+      <th>报告日期</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for applicant_print in applicant_prints %}
+    <tr>
+     <td>{{applicant_print.name}}</td>
+     <td>{{applicant_print.age}}</td>
+     <td>{{applicant_print.telphone}}</td>
+     <td>{{applicant_print.sex}}</td>
+     <td>{{applicant_print.received_date|date:"Y-m-d H:i:s"}}</td>
+     <td>{{applicant_print.apal}}--{{applicant_print.apal_type}}</td>
+     <td>{{applicant_print.taql}}--{{applicant_print.taql_type}}</td>
+     <td>{{applicant_print.bsml}}--{{applicant_print.bsml_type}}</td>
+     <td>{{applicant_print.fokl}}--{{applicant_print.fokl_type}}</td>
+     <td>{{applicant_print.Vd}}</td>
+     <td>{{applicant_print.Ga}}</td>
+     <td>{{applicant_print.timestamp|date:"Y-m-d H:i:s"}}</td>
+     <td><a target="_blank" href="../applicant_print_admin/{{applicant_print.id}}/"/>打印预览</a></td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

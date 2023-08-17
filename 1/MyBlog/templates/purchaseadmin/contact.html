@@ -1,0 +1,131 @@
+{% extends "purchaseadmin/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>采购管理系统-联系人信息录入</title>     
+       <head>
+    <title></title>
+    <link href="http://www.kunkundashen.cn/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+            <div class="row">
+            <div class="well well-lg">
+            <table class="table table-bordered">
+  <caption><h3><b><center>系统系统联系人信息一览表</b></center></h3></caption>
+    <thead>
+    <tr>
+      <th>系统编号</th>
+      <th>姓名</th>
+      <th>电话</th>
+      <th>网站</th>
+      <th>电子信箱</th>
+      <th>备注信息</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for contact in contacts %}
+    <tr>
+     <td>{{contact.id}}</td>
+     <td>{{contact.contact}}</td>
+     <td>{{contact.telphone}}</td>
+     <td>{{material.website}}</td>     
+     <td>{{contact.email}}</td>
+     <td>{{material.information}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+            <div class="well well-sm">
+             <form  action="http://{{ localip }}/contactpost/" method="POST">{% csrf_token %}
+<table class="table table-bordered">
+  <caption><h3><b><center>采购管理系统渠道联系人信息录入</b></center></h3></caption>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>信息</th>
+      <th>项目</th>
+      <th>信息</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>联系人：</td>
+      <td><input type="text" placeholder="联系人" class="title" name="contact" value="" /></td>
+      <td>联系方式：</td>
+      <td><input type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="联系方式" class="title" name="telphone" value="" /></td>
+    </tr>
+    <tr>
+      <td>备注信息：</td>
+      <td><input placeholder="备注信息" type="text"  class="title" name="information" value="" /></td>
+      <td>网站：</td>
+      <td> <input name="website" placeholder="网站" type="text" value="" /></td>
+    </tr>
+     <tr>
+      <td>电子邮箱：</td>
+      <td><input placeholder="邮箱" type="text"  class="title" name="email" value="" /></td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+    <td colspan="4">
+    <center>
+      <button type="submit" class="btn btn-primary btn-xs">录入系统</button>
+      <button type="reset" class="btn btn-primary btn-xs">清除信息</button>
+    </center>
+    </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+    });
+</script>
+    <!-- /#wrapper -->
+{% endblock %}

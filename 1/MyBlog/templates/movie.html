@@ -1,0 +1,111 @@
+{% extends "base21.html" %} 
+ {% block content %} 
+ <title>我的电影单</title>
+
+</head>  
+ <div class="row">
+    <div class="col-sm-8">
+ <div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            豆瓣电影 ”{{tag}}“标签电影列表
+        </h3>
+    </div>
+    <div class="panel-body">
+   
+   <ul class="pagination pagination">   
+    <li><h4><label class="label label-success">共检索到关键字为“{{tag}}”的电影 共{{ hits }}部电影</label></h4> </li>
+</ul>
+   
+ <div class="row">
+ {% for m in movies %}
+<div class="col-sm-6 col-md-4">
+<div class="well well-sm" style="height:280px;">
+<div class="media">
+
+  <div class="media-left">
+  <!-- ../movie_images/{{tag}}/ -->
+    <img src="../movie_images/{{tag}}/{{m.mimage}}" class="media-object" style="width:80px"  alt="{{m.mname}}">
+  </div>
+  <div class="media-body">
+    <h6 class="media-heading"><a href="{{m.mlink}}" class="">{{m.mname}}</a></h6>
+    <p>{{m.mdirecter|striptags|safe|truncatechars:35|linebreaks}}</p>
+                    
+  </div>
+  <p>{{m.mdescr|striptags|safe|truncatechars:12|linebreaks}}</p>
+<p>豆瓣评分：{{m.mrnum}}分</p>
+<p>
+<a href="#" class="btn btn-primary btn-sm" role="button">  看过</a> 
+<a href="#" class="btn btn-default btn-sm" role="button">想看</a>
+</p>
+</div>
+</div>
+</div>
+
+{% endfor %} 
+</div>      
+     
+        
+    </div>
+</div>
+   
+ <ul class="pagination pagination">
+{% if is_paginated %}
+                    {% ifequal current_page 1 %}<li><a>首页 </a><li>
+                    {% else %}<li><a href="?tag={{tag}}&p=1&ps={{ pagesize }}">首页</a><li>
+                    {% endifequal %}
+                    {% if has_previous %} <li><a href="?tag={{tag}}&p={{ previous_page }}&ps={{ pagesize }}">&larr;</a></li>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <li><a>{{ current_page }}</a></li>   
+                    {% else %}
+                        <li><a href="?tag={{tag}}&p={{ p }}&ps={{ pagesize }}">{{ p }}</a></li>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<li><a href="?tag={{tag}}&p={{ next_page }}&ps={{ pagesize }}">&rarr;</a></li>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<li><a>末页</a></li>
+                    {% else %} <li><a href="?tag={{tag}}&p={{ pages }}&ps={{ pagesize }}">末页</a></li>
+                    {% endifequal %}
+                    <li><a>页{{ current_page }}/共{{ pages }}页 &nbsp;共{{ hits }}篇</a></li>
+                             
+     {% endif %}  
+
+</ul>
+
+</div>
+
+
+<div class="col-sm-4">    
+ 
+<div class="well well-lg">
+        
+  <span class="indent pl">
+   豆瓣用户每天都在对“看过”的电影进行“很差”到“力荐”的评价，豆瓣根据每部影片看过的人数以及该影片所得的评价等综合数据，通过算法分析产生豆瓣电影250。
+  </span>
+</div>
+<div class="panel panel-info">
+<div class="panel panel-heading">
+<a name="文学" class="tag-title-wrapper">
+<h4 class="panel-title">热门标签 · · · · · · </h4>
+ </a>
+ </div>
+ <div class="panel-body">
+{% for tag in tags %}      
+ <div class="col-sm-3 col-md-4" style="margin-top:8px;margin-bottom:6px;">
+<span class="label label-success label-middle" ><a href="/movie/?tag={{tag.myear}}">{{tag.myear}}&nbsp;&nbsp;</span></a>
+</div>
+{%endfor%}
+</div>
+ </div>
+
+ </div>
+      
+</div>
+
+</div>
+
+ {% endblock %}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://www.kunkundashen.cn/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="http://www.kunkundashen.cn/static/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="http://www.kunkundashen.cn/static/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="http://www.kunkundashen.cn/static/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://www.kunkundashen.cn/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+{% if request.session.is_logined %}
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">坤坤大神内容管理系统v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 文章内容管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/content_admin/">文章审核</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/picture_admin/">图片审核</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/classify_admin/">文章分类</a>
+                                </li>
+                                  <li>
+                                    <a href="http://www.kunkundashen.cn/comment_admin/">评论管理</a>
+                                </li>
+
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>用户管理</a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/user_admin/">系统用户管理</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/delete_user/">禁用用户管理</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/session_admin/">会话管理</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-tasks fa-fw"></i>电影书籍管理</a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/movie_admin/">电影管理</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/book_admin/">书籍管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> 系统设置</a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/theme_admin/">主题管理</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/password_admin/">密码管理</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.kunkundashen.cn/sloginout/">注销登录</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                       
+                       
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+           <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">控制面板->Hello,{{ request.session.nick }}</h1>
+                    <p>上次登陆时间：{{ request.session.lastlogin }}</p>
+                    <p>上次登陆IP地址：{{ request.session.IP }}</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+    <hr>       
+    
+ {% block userdefine %}
+ <!-- 此处为模板引用位置 -->
+ {% endblock %}
+    
+    <!-- jQuery -->
+    <script src="http://www.kunkundashen.cn/static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://www.kunkundashen.cn/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="http://www.kunkundashen.cn/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="http://www.kunkundashen.cn/static/vendor/raphael/raphael.min.js"></script>
+    <script src="http://www.kunkundashen.cn/static/vendor/morrisjs/morris.min.js"></script>
+    <script src="http://www.kunkundashen.cn/static/data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://www.kunkundashen.cn/static/js/sb-admin-2.js"></script>
+{% else %}
+
+<p text-align="center">你没有管理权限！</p>
+
+{% endif %}
+<footer>
+ <div text-align="center"> Copyright &copy; 2022.Company name All rights reserved. 坤坤大神内容管理系统V2.0</div>
+</footer>
+</body>
+
+
+</html>

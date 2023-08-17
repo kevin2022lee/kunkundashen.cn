@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://www.kunkundashen.cn/site_medias/js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+tinymce.init({
+	selector: "textarea",
+	plugins: [
+		"advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+		"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+		"table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
+	],
+	toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft preview",
+
+	menubar: false,
+	toolbar_items_size: 'small',
+
+	style_formats: [
+		{title: 'Bold text', inline: 'b'},
+		{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+		{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+		{title: 'Example 1', inline: 'span', classes: 'example1'},
+		{title: 'Example 2', inline: 'span', classes: 'example2'},
+		{title: 'Table styles'},
+		{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+	],
+
+	templates: [
+		{title: 'Test template 1', content: '<b>Test 1</b>'},
+		{title: 'Test template 2', content: '<em>Test 2</em>'}
+	]
+});
+</script>
+    <title>Bocai Code Solver--开盘信息</title>
+    
+    
+    
+</head>
+
+<body>
+
+<div class="container">
+{% extends "bocai/base.html" %}     
+{% block content %} 
+
+
+<div class="panel">
+
+<div class="well">
+
+<form role="form" action="../html2ubb/" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="html_code">生成的直播html源代码</label>
+    <textarea id="html_code" name="html_code" rows="24" class="form-control" >
+   {% for k,v in infos.items %}    
+
+<h4>{{k}}</h4>
+ <br>    
+ 
+ {% autoescape off %}
+ 
+<table style="border: 1px solid #D4EFF7; width: 100%;">
+<tbody>
+
+<tr class="tr3">
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: purple;"><strong>比赛时间</strong></span></p></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: purple;"><strong>赛事</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: purple;"><strong>主隊</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: purple;"><strong>让球盘</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: purple;"><strong>客隊</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: purple;"><strong>比分</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: purple;"><strong>赢盘球队</strong></span></span></p>
+</td>
+</tr>
+
+<tr class="tr3">
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{dt}}</strong></span></p></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: orange;"><strong>{{v.4}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.5}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: blue;"><strong>{{v.6}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.7}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: red;"><strong>0:0</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.5}}/{{v.7}}</strong></span></span></p>
+</td>
+</tr>
+
+
+<tr class="tr3">
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{dt}}</strong></span></p></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: orange;"><strong>{{v.8}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.9}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: blue;"><strong>{{v.10}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.11}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: red;"><strong>0:0</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.9}}/{{v.11}}</strong></span></span></p>
+</td>
+
+</tr>
+
+
+<tr class="tr3">
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{dt}}</strong></span></p></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: orange;"><strong>{{v.12}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.13}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: blue;"><strong>{{v.14}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.15}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: red;"><strong>0:0</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.13}}/{{v.15}}</strong></span></span></p>
+</td>
+
+</tr>
+
+<tr class="tr3">
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{dt}}</strong></span></p></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: orange;"><strong>{{v.16}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.17}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: blue;"><strong>{{v.18}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.19}}</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: red;"><strong>0:0</strong></span></span></p>
+</td>
+<td>
+<p align="center"><span class="f18"><span style="display: inline-block; color: green;"><strong>{{v.17}}/{{v.19}}</strong></span></span></p>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+
+{% endautoescape %}
+
+{% endfor %}
+
+    </textarea>
+    <br>
+    <p>
+  <button type="sumit" class="btn btn-primary btn-lg btn-block">获取开盘UBB代码</button>
+
+      </p>
+  </div>
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+
+{% endblock %}
+</body>
+</html>

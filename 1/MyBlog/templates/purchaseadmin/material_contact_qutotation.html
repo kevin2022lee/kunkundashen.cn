@@ -1,0 +1,67 @@
+{% extends "purchaseadmin/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>采购信息管理系统-报价信息录入</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+            <div class="well well-sm">
+<form action="http://{{ localip }}/materialcontactquotationpost/{{cid}}/" method="POST">{% csrf_token %}
+<table class="table table-bordered">
+  <caption><h3><b><center>采购信息管理系统录入报价信息一览表</b></center></h3></caption>
+
+  <tbody>
+    <tr>
+   <td>公司信息：</td>
+   <td><input class="input" placeholder="公司开票抬头" type="text" value="" name="company" /></td>
+    </tr>
+    <tr>
+   <td>成本参考</td>
+   <td><input class="input" placeholder="目录价折扣或价格区间" type="text" value="" name="policy" /></td>
+    </tr>
+    <tr>
+   <td>报价年度</td>
+   <td><select class="select" name="year">
+   <option value="2021">2021年度</option>
+   <option value="2022">2022年度</option>
+   <option value="2023">2023年度</option>
+   <option value="2024">2024年度</option>
+   <option value="2025">2025年度</option>
+   <option value="2026">2026年度</option>
+   </select>
+   </td>
+    </tr> 
+     <tr>
+   <td>货号信息</td>
+   <td>
+   <input class="input" placeholder="货号信息-格式如H9786" type="text" value="" name="price" />
+   </td>
+    </tr> 
+    <tr>
+    <td colspan="2">
+    <center><button type="submit" class="btn btn-primary btb-xs">报价录入</button></center>
+    </td>
+  </tbody>
+</table>
+</form>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

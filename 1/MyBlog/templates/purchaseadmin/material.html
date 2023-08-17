@@ -1,0 +1,139 @@
+{% extends "purchaseadmin/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>采购管理系统-基本物料信息录入</title>     
+       <head>
+    <title></title>
+    <link href="http://www.kunkundashen.cn/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+            <div class="row">
+            <div class="well well-sm">
+             <form  action="http://{{ localip }}/materialpost/" method="POST">{% csrf_token %}
+<table class="table table-bordered">
+  <caption><h3><b><center>采购管理系统化学试剂--基本物料信息录入</b></center></h3></caption>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>信息</th>
+      <th>项目</th>
+      <th>信息</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>物料名称：</td>
+      <td><input type="text" placeholder="物料名称" class="title" name="material" value="" /></td>
+      <td>物料类型：</td>
+      <td>
+      <select  class="title" name="code">
+      <option value="耗材类">耗材类</option>
+      <option value="定制类">定制类</option>
+      <option value="试剂类">试剂类</option>
+      </td>
+    </tr>
+    <tr>
+      <td>CAS编号：</td>
+      <td><input placeholder="CAS编号" type="text"  class="title" name="cas" value="" /></td>
+      <td>单位：</td>
+      <td> <input name="unit" placeholder="单位" type="text" value="" /></td>
+    </tr>
+        <tr>
+      <td>纯度等级：</td>
+      <td><select  class="title" name="grade">
+      <option value="不明确">不明确</option>
+      <option value="AR">AR</option>
+      <option value="GR">GR</option>
+      <option value="LR">LR</option>
+      <option value="光谱纯">光谱纯</option>
+      <option value="EP">高纯试剂</option>
+      <option value="PT">基准试剂</option>
+      <option value="BR">生物试剂</option>
+      <option value="BC">生化试剂</option>
+      <option value="BS">生物染色剂</option>
+      <option value="脱盐">脱盐</option>
+      <option value="PAGE">PAGE</option>
+      <option value="HPLC">HPLC</option>
+      </select>
+      </td>
+      <td>在用试剂：</td>
+      <td>
+      <select  class="title" name="extra">
+      <option selected value="在用-HPV">在用-HPV</option>
+      <option selected value="在用-MSI">在用-MSI</option>
+      <option selected value="在用-IHC">在用-IHC</option>
+      <option selected value="在用-FISH">在用-FISH</option>
+      <option selected value="在用-仪器设备">在用-HPV</option>
+      <option selected value="在用-其他项目">在用-HPV</option>
+      <option value="不在用">不在用</option>
+      </td>
+    </tr>
+    <tr>
+      <td>包装规格：</td>
+      <td>
+      <input name="package" placeholder="包装规格" type="text" value="" />
+      </td>
+      <td>录入日期：</td>
+      <td>
+      <div class="control-group">
+                <div class="controls input-append date form_date"  data-date-format="yyyy-mm-dd" data-link-field="dtp_input2">
+                    <input placeholder="录入日期" size="16" type="text" value="" readonly>
+                    <span class="add-on"><i class="icon-remove"></i></span>
+                    <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+                <input name="JD_date" type="hidden" id="dtp_input2" value="" />
+            </div>
+      </td>
+    </tr>
+    <td colspan="4">
+    <center>
+      <button type="submit" class="btn btn-primary btn-xs">录入系统</button>
+      <button type="reset" class="btn btn-primary btn-xs">清除信息</button>
+    </center>
+    </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+</script>
+    <!-- /#wrapper -->
+{% endblock %}

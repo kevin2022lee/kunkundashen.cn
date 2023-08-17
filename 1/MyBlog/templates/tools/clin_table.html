@@ -1,0 +1,641 @@
+{% extends "base21.html" %}   
+{% block content %} 
+<script language="JavaScript">
+document.linkColor="010785";
+document.vlinkColor="010785";
+
+var a = 1*0;
+var b = 1*0;
+var c = 1*0;
+var d = 1*0;
+var ab = 1*0;
+var cd = 1*0;
+var ac = 1*0;
+var bd = 1*0;
+var nn = 1*0;
+var n=1*0, r=1*0, p=1*0, q=1*0, l95b=1*0, u95b=1*0, num=1*0, denom=1*0;
+
+var z = 1*1.96;
+var zsq = z*z;
+
+
+function calc() {
+var xqm = 1*0;
+if(document.tab1.elements[0].value==""){xqm++}
+if(document.tab1.elements[1].value==""){xqm++}
+if(document.tab1.elements[3].value==""){xqm++}
+if(document.tab1.elements[4].value==""){xqm++}
+if(xqm>1*0){alert("数据输入错误，请确认.")}
+
+a = document.tab1.elements[0].value*1;
+b = document.tab1.elements[1].value*1;
+ab = a+b*1;
+document.tab1.elements[2].value = ab;
+
+c = document.tab1.elements[3].value*1;
+d = document.tab1.elements[4].value*1;
+cd = c+d*1;
+document.tab1.elements[5].value = cd;
+
+ac = a+c*1;
+bd = b+d*1;
+nn = a+b+c+d*1;
+
+document.tab1.elements[6].value = ac;
+document.tab1.elements[7].value = bd;
+document.tab1.elements[8].value = nn;
+
+var prev = bd/nn;
+document.tab2.elements[0].value = Math.round(prev*1000000)/1000000;
+
+n = nn;
+p = prev;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[1].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[2].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var sens = b/bd;
+document.tab2.elements[3].value = Math.round(sens*1000000)/1000000;
+
+n = bd;
+p = sens;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[4].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[5].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var spec = c/ac;
+document.tab2.elements[6].value = Math.round(spec*1000000)/1000000;
+
+n = ac;
+p = spec;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[7].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[8].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var ppos = ab/nn;
+document.tab2.elements[9].value = Math.round(ppos*1000000)/1000000;
+
+n = nn;
+p = ppos;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[10].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[11].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var pneg = cd/nn;
+document.tab2.elements[12].value = Math.round(pneg*1000000)/1000000;
+
+n = nn;
+p = pneg;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[13].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[14].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var tp = b/ab;
+document.tab2.elements[15].value = Math.round(tp*1000000)/1000000;
+
+n = ab;
+p = tp;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[16].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[17].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var tn = c/cd;
+document.tab2.elements[21].value = Math.round(tn*1000000)/1000000;
+
+n = cd;
+p = tn;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[22].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[23].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var fp = a/ab;
+document.tab2.elements[18].value = Math.round(fp*1000000)/1000000;
+
+n = ab;
+p = fp;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[19].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[20].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var fn = d/cd;
+document.tab2.elements[24].value = Math.round(fn*1000000)/1000000;
+
+n = cd;
+p = fn;
+<!--begin l95b-->
+q = 1-p;
+num = (2*n*p)+zsq-1-(z*Math.sqrt(zsq-2-(1/n)+4*p*((n*q)+1)));
+denom = 2*(n+zsq);
+l95b = num/denom;
+if(p==0) {l95b = 0};
+document.tab2.elements[25].value = Math.round(l95b*1000000)/1000000;
+<!--end l95b-->
+
+<!--begin u95b-->
+num = (2*n*p)+zsq+1+(z*Math.sqrt(zsq+2-(1/n)+4*p*((n*q)-1)));
+denom = 2*(n+zsq);
+u95b = num/denom;
+if(p==1) {u95b = 1};
+document.tab2.elements[26].value = Math.round(u95b*1000000)/1000000;
+<!--end u95b-->
+
+var pl = sens/(1-spec);
+var nl = (1-sens)/spec;
+document.tab2.elements[27].value = Math.round(pl*1000000)/1000000;
+document.tab2.elements[30].value = Math.round(nl*1000000)/1000000;
+
+
+var xp = Math.sqrt(((1-sens)/b)+(spec/a));
+var xn = Math.sqrt((sens)/d)+((1-spec)/c);
+var lgpl = Math.log(pl);
+var lgnl = Math.log(nl);
+
+l95b = Math.exp(lgpl-(1.96*xp));
+document.tab2.elements[28].value = Math.round(l95b*1000000)/1000000;
+u95b = Math.exp(lgpl+(1.96*xp));
+document.tab2.elements[29].value = Math.round(u95b*1000000)/1000000;
+
+l95b = Math.exp(lgnl-(1.96*xn));
+document.tab2.elements[31].value = Math.round(l95b*1000000)/1000000;
+u95b = Math.exp(lgnl+(1.96*xn));
+document.tab2.elements[32].value = Math.round(u95b*1000000)/1000000;
+
+
+var plw = tp/fp;
+var nlw = fn/tn;
+document.tab2.elements[33].value = Math.round(plw*1000000)/1000000;
+document.tab2.elements[36].value = Math.round(nlw*1000000)/1000000;
+
+
+var xpw = Math.sqrt(((1-tp)/b)+((1-fp)/a));
+var xnw = Math.sqrt((1-fn)/d)+((1-tn)/c);
+var lgplw = Math.log(plw);
+var lgnlw = Math.log(nlw);
+
+l95b = Math.exp(lgplw-(1.96*xpw));
+document.tab2.elements[34].value = Math.round(l95b*1000000)/1000000;
+u95b = Math.exp(lgplw+(1.96*xpw));
+document.tab2.elements[35].value = Math.round(u95b*1000000)/1000000;
+
+l95b = Math.exp(lgnlw-(1.96*xnw));
+document.tab2.elements[37].value = Math.round(l95b*1000000)/1000000;
+u95b = Math.exp(lgnlw+(1.96*xnw));
+document.tab2.elements[38].value = Math.round(u95b*1000000)/1000000;
+}<!--end.f.calc-->
+
+function wipe() {
+document.tab1.elements[0].value = "";
+document.tab1.elements[1].value = "";
+document.tab1.elements[3].value = "";
+document.tab1.elements[4].value = "";
+document.tab1.elements[2].value = "";
+document.tab1.elements[5].value = "";
+document.tab1.elements[6].value = "";
+document.tab1.elements[7].value = "";
+document.tab1.elements[8].value = "";
+for(var i=0; i<39; i++)
+{
+document.tab2.elements[i].value = "";
+}<!--end.for-->
+
+}<!--end.f.wipe-->
+
+function unwipe()
+{
+var date = new Date();
+var tabx1 = new Array();
+var tabx2 = new Array();
+
+for(var i=0; i<9; i++)
+{
+tabx1[i] = document.tab1.elements[i].value;
+}<!--end.for-->
+
+for(var i=0; i<39; i++)
+{
+tabx2[i] = document.tab2.elements[i].value;
+}<!--end.for-->
+
+var aa = '<FONT COLOR="#010785">临床诊断统计报告:<br />来自观察到的样本：人口患病率、敏感性、特异性、预测值和似然比的估计值</FONT><br />'+date+')<div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div><FONT COLOR="010785">输入的数据:</font><br />';
+
+document.open();
+document.write('<div style="margin-left:auto;margin-right:auto;width:50%;padding:5%;"><BODY BGCOLOR="#FFFFFF" linkColor="010785" vlinkColor="010785"><font face="verdana, arial">'+aa);
+
+document.write('<TABLE CLASS="TABLE TABLE-BORDERED" BORDER=1 CELLSPACING=0 CELLPADDING=2><TR align=center><TD><TD colspan=2 ALIGN=Center BGCOLOR="#FFFFFF"><font face="verdana, arial"><FONT COLOR="#010785">条件</font><br /><TD rowspan=2 valign=bottom><font face="verdana, arial"><FONT COLOR="010785">总计</font><br /><TR ALIGN=Center><TD><TD BGCOLOR="#FFFFFF"><font face="verdana, arial"><FONT COLOR="#010785">&nbsp;不存在疾病&nbsp;</font><br /><TD BGCOLOR="#FFFFFF"><font face="verdana, arial"><FONT COLOR="#010785">存在疾病</font><br /><TR ALIGN=Center><TD BGCOLOR="#FFFFFF" align=right><font face="verdana, arial"><FONT COLOR="#010785">&nbsp;试验阳性&nbsp;</font><br /><TD><font face="verdana, arial">'+tabx1[0]+'<br /><TD><font face="verdana, arial">'+tabx1[1]+'<br /><TD><font face="verdana, arial">'+tabx1[2]+'<br /><TR ALIGN=Center><TD BGCOLOR="#FFFFFF" align=right><font face="verdana, arial"><FONT COLOR="#010785">&nbsp;试验阴性&nbsp;</font><br /><TD><font face="verdana, arial">'+tabx1[3]+'<br /><TD><font face="verdana, arial">'+tabx1[4]+'<br /><TD><font face="verdana, arial">'+tabx1[5]+'<br /><TR ALIGN=Center><TD BGCOLOR="#FFFFFF" align=right><font face="verdana, arial"><FONT COLOR="#010785">&nbsp;合计&nbsp;</font><br /><TD><font face="verdana, arial">'+tabx1[6]+'<br /><TD><font face="verdana, arial">'+tabx1[7]+'<br /><TD><font face="verdana, arial">'+tabx1[8]+'<br /></table><div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div>');
+
+
+document.write('<TABLE CLASS="TABLE TABLE-BORDERED"  BORDER=1 CELLSPACING=0 CELLPADDING=4><TR><TD><TD rowspan=2 valign=bottom align=center><font face="verdana, arial">估计<br />值<br /><TD colspan=2 align=center><font face="verdana, arial">95%的置信区间<br /><TR><TD><TD align=center><font face="verdana, arial">下限<br /><TD align=center><font face="verdana, arial">上限<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>患病率<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[0]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[1]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[2]+'<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>灵敏度<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[3]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[4]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[5]+'<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>特异性<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[6]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[7]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[8]+'<br /><TR><TD colspan=4 align=left><font face="verdana, arial"><FONT SIZE=-1>对于任何特定的测试结果，其概率为:<br /></FONT><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>阳性<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[9]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[10]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[11]+'<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>阴性<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[12]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[13]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[14]+'<br /><TR><TD colspan=4 align=left nowrap><font face="verdana, arial"><FONT SIZE=-1>对于任何特定的阳性检测结果，其概率为:<br /></FONT><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>真&nbsp;阳性(阳性预测值)<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[15]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[16]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[17]+'<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>假&nbsp;阳性<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[18]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[19]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[20]+'<br /><TR><TD colspan=4 align=left nowrap><font face="verdana, arial"><FONT SIZE=-1>对于任何特定的阴性测试结果，其概率为:<br /></FONT><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>真&nbsp;阴性(阴性预测值)<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[21]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[22]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[23]+'<br /><TR><TD align=right><A NAME="return2"></A><font face="verdana, arial"><FONT SIZE=-1>假&nbsp;阴性<br /></FONT><TD align=center><font face="verdana, arial">'+tabx2[24]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[25]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[26]+'<br /><TR><TD colspan=4 align=left><font face="verdana, arial"><FONT SIZE=-1>似然比:<br />&nbsp;&nbsp;&nbsp;[C]&nbsp;=&nbsp常规;<br />&nbsp;&nbsp;&nbsp;[W]&nbsp;=&nbsp; 按患病率加权<br /></FONT><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>阳性 [C]</FONT><br /><TD align=center><font face="verdana, arial">'+tabx2[27]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[28]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[29]+'<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>阴性 [C]</FONT><br /><TD align=center><font face="verdana, arial">'+tabx2[30]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[31]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[32]+'<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>阳性 [W]</FONT><br /><TD align=center><font face="verdana, arial">'+tabx2[33]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[34]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[35]+'<br /><TR><TD align=right><font face="verdana, arial"><FONT SIZE=-1>阴性 [W]</FONT><br /><TD align=center><font face="verdana, arial">'+tabx2[36]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[37]+'<br /><TD align=center><font face="verdana, arial">'+tabx2[38]+'<br /></table><div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div> <a href="clin_table_2x2">返回</a></div>');
+
+
+document.close();
+}<!--end.f.unwipe-->
+</script>
+
+
+<script type="text/javascript">
+function change(e, color){
+var el=window.event? event.srcElement: e.target
+if (el.tagName=="INPUT"&&el.type=="button")
+el.style.backgroundColor=color
+}
+</script>
+
+<style type="text/css">
+.initial2{
+background-color:#EEEEEE;
+font-size:10pt;
+padding:6px;
+}
+
+.initial3{
+background-color:orange;
+font-family:verdana;
+font-size:11pt;
+text-align:center;
+}
+
+.cell1{
+font-family:verdana;
+font-size:11pt;
+text-align:center;
+border-style:none;
+}
+
+.cell2{
+font-family:verdana;
+font-size:10pt;
+text-align:center;
+border-style:none;
+}
+
+
+
+</style>
+<title>临床诊断试验统计四格表--专业版</title>
+
+</head>
+<body>
+<div class="col-md-12">
+<div class="panel panel-success">
+    <div class="panel-heading">
+<span class="glyphicon glyphicon-calendar"></span><b>临床诊断计算器</b>
+    </div>
+<div class="panel-body">
+<div class="trim2">
+<span style="color: #010785;">从<img src="white.gif" width="1" height="22" border="0"> 来自观察到的样本：人口患病率、敏感性、特异性、预测值和似然比的估计值</span>
+<div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div>
+给定<img src="white.gif" width="1" height="22" border="0"> 一个根据某种条件是否存在进行交叉分类的受试者样本，以及根据旨在表明该条件存在的测试是否证明为阳性或阴性，此页面将计算估计的总体中点和 95% 置信度间隔为
+<ul class="list-group">
+<li class="list-group-item"></font>患病率;<font color="#FFFFFF"><sub>T</sub></font></li>
+
+<li class="list-group-item"></font>测试灵敏度（如果条件存在，则测试为阳性的条件概率）;<font color="#FFFFFF"><sub>T</sub></font></li>
+
+<li class="list-group-item"></font>测试特异性（如果条件不存在，测试为阴性的条件概率）;<font color="#FFFFFF"><sub>T</sub></font></li>
+
+<li class="list-group-item"></font>测试的预测值（真阳性、真阴性、假阳性和假阴性的概率）; <font color="#FFFFFF"><sub>T</sub></font></li>
+
+<li class="list-group-item"></font>阴阳性似然比.<font color="#FFFFFF"><sub>T</sub></font></li>
+
+</ul>
+要继续，将四格表中每一个的观察频率输入指定的单元格，然后单击“计算”按钮。要使用一组新数据执行新分析，请单击 «重置» 按钮。</div>
+<div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div>
+<div class="well well-sm">
+<div style="margin-left:auto;margin-right:auto;width:60%;height:auto;">
+<table class="table table-bordered" cellspacing="0" cellpadding="4">
+<tr align=center>
+<td rowspan=2 valign="middle" style="border-style:none;">
+</td>
+<form name="tab1" onMouseover="change(event, '#9999FF')" onMouseout="change(event, '#EEEEEE')">
+<td colspan=2 align=Center bgcolor="#FFFFFF"><font color="#010785">条件</font></td>
+<td rowspan=2 valign=bottom style="border-style:none;"><font color="010785">合计</font>
+<tr align=Center>
+
+<td bgcolor="#FFFFFF"><font color="#010785">不存在疾病</font>
+<td bgcolor="#FFFFFF"><font color="#010785">存在疾病</font>
+<tr align=Center>
+<td bgcolor="#FFFFFF" align=right><font color="#010785">测试阳性</font>
+<td bgcolor="#EEEEEE"><input type=Text size="5" class="initial3" value="">
+<td bgcolor="#EEEEEE"><input type=Text size="5" class="initial3" value="">
+<td><input type=Text class="cell1" size="5" value="">
+<tr align=Center>
+<td bgcolor="#FFFFFF" align=right><font color="#010785">测试阴性</font>
+<td bgcolor="#EEEEEE"><input type=Text size="5" class="initial3" value="">
+<td bgcolor="#EEEEEE"><input type=Text size="5" class="initial3" value="">
+<td><input type=Text class="cell1" size="5" value="">
+<tr align=Center>
+<td bgcolor="#FFFFFF" align=right style="border-style:none;"><font color="#010785">总计</font></td>
+<td><input type=Text class="cell1" size="5" value="">
+<td><input type=Text class="cell1" size="5" value="">
+<td><input type=Text class="cell1" size="5" value="">
+
+</table>
+</div>
+<a name="return"></a>
+</form>
+<div align="center">
+<button class="btn btn-info" onclick="javascript:calc()">&nbsp;&nbsp;&nbsp;计算&nbsp;&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;<button class="btn btn-info" onclick="javascript:wipe()">&nbsp;&nbsp;&nbsp;重置&nbsp;&nbsp;&nbsp;</button></div>
+</div>
+<div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div>
+<div class="well well-sm">
+<div style="margin-left:auto;margin-right:auto;width:70%;height:auto;">
+<table class="table table-bordered"  cellspacing="0" cellpadding="4">
+<tr>
+<td style="border-style:none;">
+<td rowspan=2 valign=center align=center><font color="010785">估计值</font>
+<td colspan=2 align=center><font color="010785">95%的置信区间</font>
+<tr>
+<td style="border-style:none;"><form name="tab2">
+<td align=center valign=bottom><font color="010785">下限</font>
+<td align=center valign=bottom><font color="010785">上限</font>
+<tr>
+<td align=right><font size=-1>患病率</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><font size=-1>灵敏度</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><font size=-1>特异性</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td colspan=4 align=left><font size=-1>对于任何特定的测试结果，其概率为：</font>
+<tr>
+<td align=right><font size=-1>总阳性符合率</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><font size=-1>总阴性符合率</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td colspan=4 align=left nowrap><font size=-1>对于任何特定的阳性检测结果，其概率为：</font>
+<tr>
+<td align=right><font size=-1>真阳性</font>
+<span style="font-size: 75%;">(阳性预测值)</span>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><font size=-1>假阳性</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td colspan=4 align=left nowrap><font size=-1>对于任何特定的阴性测试结果，其概率为：</font>
+<tr>
+<td align=right><font size=-1>真阴性</font>
+<span style="font-size: 75%;">(阴性预测值)</span>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><a name="return2"></a><font size=-1>假阴性</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td colspan=4 align=left><font size=-1>似然比：
+
+&nbsp;&nbsp;&nbsp;[C]&nbsp;=&nbsp;常规<br />
+&nbsp;&nbsp;&nbsp;[W]&nbsp;=&nbsp;按患病率加权&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<a href="#def">定义</a>]<br /></font>
+<tr>
+<td align=right><font size=-1>阳性 [C]</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><font size=-1>阴性 [C]</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><font size=-1>阳性 [W]</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td align=right><font size=-1>阴性 [W]</font>
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<td align=center><input type=Text class="cell2" size="8" value="">
+<tr>
+<td colspan=4 nowrap></form>
+<font size=-1>
+上述任何单元格中的条目“NaN”表示<br>无法执行计算，因为<br>输入的值包含一个或多个零实例。关于计算置信区间的<br>
+<a href="#note">说明</a>关于置信区间计算</font>
+</table>
+</div>
+</div>
+
+<p align="center"><button class="btn btn-info" onclick="javascript:unwipe()">&nbsp;&nbsp;打印报告&nbsp;&nbsp;</button></p>
+
+<div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div>
+
+
+
+
+
+<br />
+<hr align="center">
+<div style="margin-left:auto;margin-right:auto;width:60%;height:30px;">
+<font size=-2>&copy;Richard Lowry（理查德.劳瑞）&Kevin Lee（李先坤） 2001-{{thisyear}}版权所有，All rights reserved.</font></div>
+<hr align="center">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<a name="note"></a>
+<br />&nbsp;
+<br />&nbsp;
+<br />
+
+<h1><span class="label label-info"><font color="#010785"><b>关于置信区间计算说明</b></font></span></h1>
+<br />
+<br />
+
+95% 的比例置信区间（包括上述最后四个除外）是根据 Robert Newcombe 描述的有效评分方法（针对连续性进行校正）计算的，基于以下概述的程序EB Wilson 在 1927 年。正如 Newcombe 在他 1998 年的论文中指出的那样，熟悉的高斯近似
+<table border=0 cellspacing="2" cellpadding="1" style="margin-top:15px;margin-bottom:15px;">
+<tr>
+<td width=5 style="border-style:none;">
+<td width=5 style="border-style:none;"><nobr>p&nbsp;</font><font face="arial">&#177;&nbsp;</font>1.96 &times; <span style="font-size: 110%;">&radic;</span><span style="text-decoration:overline;">p(1-p)/n</span></nobr>
+
+</table>
+不适用于比例很小的情况，通常是流行度测量的情况，或相当大的情况，最好是敏感性和特异性测量的情况。
+
+
+<br />
+
+<br />
+<font size=-1>参考文献:
+<blockquote>
+Newcombe, Robert G. "Two-Sided Confidence Intervals for the Single Proportion: Comparison of Seven Methods," <i>Statistics in Medicine,</i> <b>17</b>, 857-872 (1998).<br />
+<br />
+Wilson, E. B. "Probable Inference, the Law of Succession, and Statistical Inference," <i>Journal of the American Statistical Association,</i> <b>22</b>, 209-212 (1927).</font>
+
+<font size=-1>
+</blockquote>
+<a href="#return">返回</a></font><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<a name="def"></a>
+<br />&nbsp;
+<br />
+<h1><span class="label label-info"><font color="010785"><b>似然比的定义：</b></font></span></h1>
+<br />
+<img src="/static/imgs/srb.png"/>
+<div align="center" style="height:0px;border-bottom:solid 1px #cccccc;margin-top:15px;margin-bottom:15px;"></div>
+<font size=-1><a href="#return2">返回</a></font>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</div>
+
+</div>
+    </div>
+</div>
+
+</body>
+
+{% endblock %}

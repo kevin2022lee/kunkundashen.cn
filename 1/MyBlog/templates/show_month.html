@@ -1,0 +1,103 @@
+ {% extends "base21.html" %} 
+ {% block content %}
+<title>按月[{{ sdate }}~~{{ edate }}]归类文章列表</title>
+<link type="text/css" rel="stylesheet" href="http://{{ localip }}/site_medias/css/shCoreDefault.css"/>
+<div class="container">
+<div class="well well-sm">
+<a href="/MyBlog/">首页</a><span>&nbsp;/&nbsp;</span><a href="#">频道</a><span>&nbsp;/&nbsp;</span><span>显示按月存档文章</span>
+</div>
+<div class="row">
+<div class="col-sm-3">
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            文章存档
+        </h3>
+    </div>
+    <div class="panel-body">
+    
+<ul class="nav nav-pills nav-stacked">
+{% for cd in cds %}
+<li><a href="http://{{ localip }}/MyBlog/ym/{{ cd.year }}/{{ cd.month }}/" title="文章数量{{ cd.number }}">{{ cd.year }}年{{ cd.month }}月&nbsp;<span class="badge pull-right">{{ cd.number }}</span></a></li>
+{% endfor %}
+
+<li><a href="http://{{ localip }}/MyBlog/ym/2014/12/" >更多存档文章 >></a></li> 
+</ul>
+
+</div>
+</div>
+
+
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            频道导航
+        </h3>
+    </div>
+    <div class="panel-body">
+<ul class="nav nav-pills nav-stacked">
+{% for type in types %}
+<li><a href="http://{{ localip }}/MyBlog/classfy/{{ type.id }}/" title="{{ type.id }}">{{ type.typename }}&nbsp;<span class="badge pull-right">{{ type.id }}</span></a></li>
+{% endfor %}
+<li><a href="http://{{ localip }}/MyBlog/classfy/11/" >更多文章分类 >></a></li> 
+</ul>
+</div>
+</div>
+
+</div>
+<div class="col-sm-9">
+<table class="table table-bordered">
+<tbody style="table-layout:fixed;"><tr></tr>
+    <tr>
+    <td>.::</td>
+    <td style="width:42% text-align:center;" ><span class="glyphicon glyphicon-book" ></span>文章</td>
+    <td style="width:20%" ><span class="glyphicon glyphicon-user"></span>作者</td>
+    <td style="width:10%" ><span class="glyphicon glyphicon-eye-open"></span>回復</td>
+    <td style="width:28%" ><span class="glyphicon glyphicon-time"></span>最後發表</td>
+    </tr>
+{% for cm in cms %}
+<tr align="center">
+<td><a title="打開新窗口" href="http://{{ localip }}/MyBlog/topics/{{ cm.id }}/" target="_blank">.::</a></td>
+<td style="text-align:left;padding-left:8px" ><a title="{{ cm.title}}" href="http://{{ localip }}/MyBlog/topics/{{ cm.id }}/">{{ cm.title}}</a></td>
+<td style="width:10%" >{{ cm.u }}</td>
+<td style="width:17%">{{ cm.article_click }}</td>
+<td style="width:10%"><a href="#" class="f10">{{ cm.timestamp|date:"Y-m-d H:i"}}</a></td>
+</tr>
+{% endfor %}
+</table>
+
+  <ul class="pagination pagination">
+{% if is_paginated %}
+                    {% ifequal current_page 1 %}<li><a>首页 </a><li>
+                    {% else %}<li><a href="?p=1&ps={{ pagesize }}">首页</a><li>
+                    {% endifequal %}
+                    {% if has_previous %} <li><a href="?p={{ previous_page }}&ps={{ pagesize }}">&larr;</a></li>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <li><a>{{ current_page }}</a></li>   
+                    {% else %}
+                        <li><a href="?p={{ p }}&ps={{ pagesize }}">{{ p }}</a></li>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<li><a href="?p={{ next_page }}&ps={{ pagesize }}">&rarr;</a></li>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<li><a>末页</a></li>
+                    {% else %} <li><a href="?p={{ pages }}&ps={{ pagesize }}">末页</a></li>
+                    {% endifequal %}
+                    <li><a>页{{ current_page }}/共{{ pages }}页 &nbsp;共{{ hits }}篇</a></li>
+                        <li><a href="?p=1&ps=5">5篇文章/页</a> </li>
+                             <li><a href="?p=1&ps=20">20篇文章/页</a> </li>
+     {% endif %}  
+
+</ul>       
+
+</div>
+
+</div>
+</div>
+{% endblock %}

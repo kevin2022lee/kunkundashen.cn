@@ -1,0 +1,45 @@
+<title>用户密码重置页面</title>
+<link href="/static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.table{width:500;}
+</style>
+ <body>
+ <center>
+ <form action="http://{{localip}}/reset_password_post/" method="POST" >{% csrf_token %}
+ 
+ <table class="table table-bordered">
+  <caption><h3><b><center>内容管理系统--密码修改！</b></center></h3></caption>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>信息</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>原来密码：</td>
+      <td><input type="password" placeholder="请输入原密码" class="input" name="raw_password" value="" /></td>
+    </tr>
+        <tr>
+      <td>新密码：</td>
+      <td><input type="password" placeholder="请输入新密码" class="input" name="new_password" value="" /></td>
+    </tr><tr>
+      <td>重复新密码：</td>
+      <td><input type="password" placeholder="请再输入新密码" class="input" name="new_password2" value="" /></td>
+    </tr>
+    <td colspan="2">
+    <center>
+      <button type="submit" class="btn btn-primary btn-xs">提交修改</button>
+      <button type="reset" class="btn btn-primary btn-xs">清除信息</button>
+    </center>
+    </td>
+    </tr>
+  </tbody>
+</table>
+ 
+ </form>
+ </center>
+ </body>

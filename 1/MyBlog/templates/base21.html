@@ -1,0 +1,387 @@
+<html>  
+<link href="/static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    var va_username=false;
+    var va_password=false;
+    $('input#logonname').blur(function(){
+        var logonname=$.trim($('input#logonname').val());
+        var ulen=logonname.length;
+        if(ulen<6){
+            $('label#logonname_errors').html('<font color="red"><span>× 用户名少于6个字符</span></font>');
+            va_username=false;
+        }else{
+              $.get("http://www.kunkundashen.cn/MyBlog/checkuser/?username="+logonname,function(data,status){
+                     if (data == "null"){
+                      $('label#logonname_errors').html('<font color="red"><span>× 不存在该用户</span></font>');    
+                      va_username=false;
+                     }else{
+                      $('label#logonname_errors').html('<font color="green"><span>√ </span></font>');
+                      va_username=true;                         
+                     }});
+          }
+    });
+     $("input#logonpass").blur(function(){
+         var logonpass = $.trim($("input#logonpass").val());
+         var llen =logonpass.length;
+         if(llen<6){
+             $('label#logonpass_errors').html('<font color="red"><span>× 密码少于6个字符！</span></font>');
+             va_password=false;
+         }else{
+             $('label#logonpass_errors').html('<font color="green"><span>√ </span></font>');
+             va_password=true;
+         }
+     });
+     $("input#logon").click(function(pre){
+        if(va_username&&va_password){
+            
+        }else{
+            if(va_username){
+                alert("请输入密码!");
+                $("input#logonpass").focus();
+                pre.preventDefault();//阻止表单提交
+            }else if(va_password){
+                alert("请输入正确的用户名!");
+                $("input#logonname").focus();
+                pre.preventDefault();//阻止表单提交
+            }else{
+                alert("用户名和密码不能为空!");
+                $("input#logonname").focus();
+                pre.preventDefault();//阻止表单提交
+            }
+        } 
+     });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#submit').attr({"disabled":"disabled"});
+    var va_user=false;
+    var va_pass=false;
+    var va_pass2=false;
+    var va_email=false;
+     $("input#username").blur(function(){
+      var username = $.trim($("input#username").val());
+      var len=username.length
+      if(len>8){
+          $('label#name_errors').html('<font color="red"><span>×  只能是字母数字且不能超过8个字符哦</span></font>');
+          $('#submit').attr({"disabled":"disabled"});
+      }else if(len<6){
+            $('label#name_errors').html('<font color="red"><span>×  只能是字母数字且不能少于6个字符哦</span></font>');
+          $('#submit').attr({"disabled":"disabled"});
+      }else{
+          $.get("http://www.kunkundashen.cn/MyBlog/checkuser/?username="+username,function(data,status){
+                 if (data == "null"){
+                  $('label#name_errors').html('<font color="green"><span>√  "' + username + '"可以注册</span></font>');
+                  va_user=true;
+                  if(va_user&&va_pass&&va_pass2&&va_email){
+                         $('#submit').removeAttr("disabled");
+                     }else{
+                         $('#submit').attr({"disabled":"disabled"});
+                     }
+                 }else{
+                  $('label#name_errors').html('<font color="red"><span>×  “' + username + '”已被注册</span></font>');
+                  $('#submit').attr({"disabled":"disabled"});
+                 }});
+      }});
+     $("input#password").blur(function(){
+         var password = $.trim($("input#password").val());
+         var plen =password.length;
+         if(plen<6){
+             $('label#password_errors').html('<font color="red"><span>×  密码不能少于6个字符！</span></font>');
+             $('#submit').attr({"disabled":"disabled"});
+         }else{
+             $('label#password_errors').html('<font color="green"><span>√  密码符合规范！</span></font>');
+             va_pass=true;
+             if(va_user&&va_pass&&va_pass2&&va_email){
+                 $('#submit').removeAttr("disabled");
+             }else{
+                 $('#submit').attr({"disabled":"disabled"});
+             }
+         }
+     });
+     $("input#password2").blur(function(){
+         var password = $.trim($("input#password").val());
+         var password2 = $.trim($("input#password2").val());
+         var plen =password2.length;
+         if(plen<6){
+             $('label#password2_errors').html('<font color="red"><span>×  密码不能少于6个字符！</span></font>');
+             $('#submit').attr({"disabled":"disabled"});
+         }else if(password==password2){
+             $('label#password2_errors').html('<font color="green"><span>√  两次密码一致！</span></font>');
+             va_pass2=true;
+             if(va_user&&va_pass&&va_pass2&&va_email){
+                 $('#submit').removeAttr("disabled");
+             }else{
+                 $('#submit').attr({"disabled":"disabled"});
+             }
+         }else{
+             $('label#password2_errors').html('<font color="red"><span>×  两次密码不一致，请重新输入！</span></font>');
+             $('#submit').attr({"disabled":"disabled"});
+         }
+     });
+     $("input#email").blur(function(){
+         var email_addr=$.trim($("input#email").val());
+         if (!email_addr.match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)){
+             $('label#email_errors').html('<font color="red"><span>×  邮箱格式不正确！</span></font>');
+             $('#submit').attr({"disabled":"disabled"});
+         }else{
+             $('label#email_errors').html('<font color="green"><span>√  邮箱格式正确，请提交注册信息！</span></font>');
+             va_email=true;
+             if(va_user&&va_pass&&va_pass2&&va_email){
+                 $('#submit').removeAttr("disabled");
+             }else{
+                 $('#submit').attr({"disabled":"disabled"});
+             }
+         }
+     }); 
+    $(".navbar-nav li").click(function() {
+    $(this).siblings('li').removeClass('active');  // 删除其兄弟元素的样式
+    $(this).addClass('active');                    // 为点击元素添加样式
+    });
+     });
+</script>
+<style>.modal-backdrop{z-index:0;}</style>
+<body>
+
+ <nav class="navbar navbar-default navbar-static-top" role="navigation">
+
+<div class="container-fluid">
+    <div class="navbar-header">       
+        <a class="navbar-brand" href="/">KKDS</a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav">
+            <!--<li><a href="/MyBlog/ym/{{thisyear}}/{{thismonth}}/">文章</a></li>-->
+            <li><a title="电影" href="/movie/">电影</a></li>
+            <li><a title="图书" href="/book/">图书</a></li>
+            <li><a title="照片" href="/photo/">照片</a></li>
+            <li><a href="/primer/" title="PCR引物设计">PCR引物设计</a></li>
+            <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">工具</a>
+            <ul class="dropdown-menu">
+            <li><a href="/cube/"><span class="glyphicon glyphicon-th-large"></span>二阶求解</a></li>
+            <li><a href="/cube_3x3/"><span class="glyphicon glyphicon-th"></span>三阶求解</a></li>
+            <li><a href="/cube_4x4/"><span class="glyphicon glyphicon-align-justify"></span>四阶求解</a></li>
+            <li><a href="/cube_pyraminx/"><span class="glyphicon glyphicon-play"></span>金字塔求解</a></li>
+            <li><a href="/clin_table_2x2/"><span class="glyphicon glyphicon-play"></span>临床诊断统计四格表</a></li>
+            </ul>
+            </li>
+            <li>
+    <form class="navbar-form navbar-left" role="search" id="sea_form"  action="http://{{ localip }}/MyBlog/search/" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control input-sm" placeholder="电影、书籍、文章名称" name="search_words">
+        </div>
+        <button type="submit" class="btn btn-default btn-sm">搜索</button>
+    </form>
+            </li>
+        </ul>
+        
+  {% if request.session.is_logined %}
+  
+  <ul class="nav navbar-nav navbar-right nav-pills"> 
+  <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="glyphicon glyphicon-user"></span>已登录<span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="http://{{ localip }}/MyBlog/addblog/new/"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;撰写日志</a></li>
+        <li><a href="http://{{ localip }}/MyBlog/manageblog/?listtype=all"><span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;管理文章</a></li>
+        <li><a href="http://{{ localip }}/MyBlog/myphoto/?listtype=all"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;管理照片</a></li>
+         <li><a href="http://{{ localip }}/MyBlog/userinfo/"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;&nbsp;用户中心</a></li>
+        <li><a href="http://{{ localip }}/MyBlog/loginout/"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;注销登录</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;&nbsp;可用积分：{{ request.session.usd }}</a></li>
+        <li><a href="#"><span class="badge"><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;{{ request.session.lastlogin }}</span></a></li>
+         <!-- <li class="divider"></li>
+        <li><a href="http://{{ localip }}/cube/"><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;求解魔方</a></li>
+       
+        <li><a href="http://{{ localip }}/bocai/"><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;菠菜开盘</a></li>
+        <li><a href="http://{{ localip }}/dagaier/"><span class="glyphicon glyphicon-th-large"></span>&nbsp;达盖尔下载器</a></li>
+        -->
+      </ul>
+    </li>
+  
+  </ul>
+  {% else %}
+  
+        
+        
+ <ul class="nav navbar-nav navbar-right"> 
+   <li><a href="http://{{ localip }}/super/"><span class="glyphicon glyphicon-eye-open"></span> 超级登录</a></li>      
+        
+<li><a href="#" data-toggle="modal" data-target="#myModal0"><span class="glyphicon glyphicon-user"></span> 注册</a></li> 
+            
+            
+  <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal0" tabindex="998" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:750px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title" id="myModalLabel">注册新用户</h5>
+            </div>
+            <div class="modal-body">
+            
+            
+ <form class="form-horizontal" role="form" action="http://www.kunkundashen.cn/MyBlog/sregister/" method="POST">
+ 
+ {% csrf_token %}
+            
+ <div class="form-group" >
+
+   
+<label for="username" class="col-sm-3 control-label">起个响亮名号：</label>
+<div class="col-sm-4"><input id="username" class="form-control input-sm" type="text" placeholder="请输入用户名称" class="register" name="account" /></div>
+<div class="col-sm-5"><sub>*</sub><label style="text-align:left;" for="username" id="name_errors"></label>
+</div>
+</div>
+ 
+ <div class="form-group">
+<label for="password" class="col-sm-3 control-label">输入登录密码：</label>
+<div class="col-sm-4"><input id="password" class="form-control input-sm" type="password" placeholder="请输入密码" class="register" name="password" /></div>
+<div class="col-sm-5"><sub>*</sub><label style="text-align:left;" for="password" id="password_errors"></label>
+</div>
+</div>
+ 
+<div class="form-group">
+<label for="password2" class="col-sm-3 control-label">确认登录密码：</label>
+<div class="col-sm-4"><input id="password2" class="form-control input-sm" type="password" placeholder="请再次输入密码" class="register" name="password2" /></div>
+<div class="col-sm-5"><sub>*</sub><label style="text-align:left;" for="password2" id="password2_errors"></label>
+</div>
+</div>
+
+
+<div class="form-group">
+<label for="email" class="col-sm-3 control-label">邮箱地址：</label>
+<div class="col-sm-4"><input id="email" class="form-control input-sm" type="text" placeholder="请输入邮件地址" class="register" name="email" /></div>
+<div class="col-sm-5"><sub>*</sub><label style="text-align:left;" for="email" id="email_errors"></label>
+</div>
+</div>
+<div class="form-group">
+<div class="col-sm-3"></div>
+<div class="col-sm-9">
+<div class="checkbox">
+    <label>
+      <a href="#"><input type="checkbox" checked> 我同意服务条款</a>
+    </label>
+ </div>
+ </div>
+</div>
+
+
+<div class="form-group">
+<label id="va_all" class="col-sm-3"></label>
+<div class="col-sm-4">
+<button id="submit" class="btn btn-primary btn-sm" type="submit" >注册</button></div>
+<div class="col-sm-4">
+<button type="reset" class="btn btn-default btn-sm">清除</button> 
+</div>
+</div>
+ 
+  
+  
+  
+</form>
+            
+            
+            </div>
+           
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>          
+            
+            
+            
+            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span>登录</a></li> 
+            
+  <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="999" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:500px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title" id="myModalLabel">登录博客</h5>
+            </div>
+            <div class="modal-body">
+            
+            
+<form class="form-horizontal" role="form" action="http://www.kunkundashen.cn/MyBlog/login/" method="POST">
+
+{% csrf_token %}
+
+ <div class="form-group">
+ <label class="control-label col-sm-3" for="logonname">用户登录：</label>
+ <div class="col-sm-5">
+<input class="form-control input-sm" id="logonname" type="text" placeholder="请输入用户名" class="login" name="account" />
+</div>
+<label class="control-label col-sm-4" style="text-align:left;"  id="logonname_errors" for="logonname"></label>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-3" for="logonpass">密码：</label>
+<div class="col-sm-5">
+<input class="form-control input-sm" id="logonpass" type="password" placeholder="请输入密码" class="login" name="password" />
+</div>
+<label class="control-label col-sm-4" style="text-align:left;" id="logonpass_errors" for="logonpass"></label>
+</div>
+<div class="form-group">
+<div class="col-sm-3"></div>
+<div class="checkbox col-sm-5"><label><input type="checkbox">记住我</label></div>
+</div>
+<div class="form-group">
+<div class="col-sm-3"></div>
+<div class="col-sm-5">
+<button id="logon" type="submit" class="btn btn-default btn-xs btn-block"">登陆</button>
+</div>
+</div>
+</form>
+            
+            
+            </div>
+           
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+            
+            
+            
+            
+        </ul> 
+ 
+ {% endif %}
+    </div>
+    </div>
+</nav>
+<div class="container">
+ {% block content %}
+ <!-- 此处为模板引用位置 -->
+ 
+ 
+ {% endblock %}
+ </div>
+<div class="well well-sm">
+<footer>
+<div id="beian" style="text-align:center;">
+<a href="http://www.kunkundashen.cn/MyBlog/">首页</a>&nbsp;&nbsp;<font style="font-family:arial,Times New Roman;">CopyRights@2013~{{ thisyear }}www.kunkundashen.cn</font>本页面访问量统计：{{ count }}人访问本页面！
+<a href="http://www.probedesigner.cn" title="QuantiMAT探针设计">QuantiMAT探针设计</a>
+<a href="http://www.kunkundashen.cn/primer/" title="PCR引物设计">PCR引物在线设计</a>
+</div>
+<div id="beian" style="text-align:center;">
+本应用由阿里云计算ECS服务平台提供服务支持
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js?id=JiBNu8ixapEVaI30&ck=JiBNu8ixapEVaI30"></script>
+
+<img alt="云计算提供商" width="100"  src="http://www.kunkundashen.cn/site_medias/imgs/aliyun.png"><br>
+本站工信部备案号：<a href="https://beian.miit.gov.cn/">豫ICP备14029863号-4</a>
+</div>
+</footer> 
+</div>
+</div>
+
+  </body>  
+</html>   

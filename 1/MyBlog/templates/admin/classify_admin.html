@@ -1,0 +1,43 @@
+{% extends "admin/admin-base.html" %} 
+ {% block userdefine %}
+    <title>坤坤大神内容管理系统-文章分类管理</title>     
+     
+            <div class="row">
+                <div class="col-lg-10">
+                  <div class="table-responsive">
+  <table class="table">
+    <caption><center><b>坤坤大神文章系统--文章分类一览表</b></center></caption>
+    <thead>
+      <tr>
+        <th>编号</th>
+        <th>分类名称</th>
+        <th>添加时间</th>
+        <th>编辑</th>
+        <th>删除</th></tr>
+    </thead>
+    <tbody>
+    {% for c in cc %}
+      <tr>
+        <td>{{c.id}}</td>
+        <td>{{c.typename}}</td>
+        <td>{{c.addtime|date:"Y-n-d H:i:s"}}</td>
+        <td><button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/classify_edit/{{ c.id }}/'">编辑</button></td>
+        <td><button class="btn btn-primary btn-xs" onclick="#" readonly>删除</button></td>
+        </tr>
+     {%endfor%} 
+       <caption><center><b><button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/MyBlog/classifyadd/'">新增分类</button></b></center></caption>
+    </tbody>
+  </table>
+</div>
+
+                </div>
+                
+                <!-- /.col-lg-10 -->
+
+          </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+ {% endblock %}

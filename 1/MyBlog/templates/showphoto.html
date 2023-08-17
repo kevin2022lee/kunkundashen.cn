@@ -1,0 +1,142 @@
+ {% extends "base21.html" %} 
+ {% block content %}
+<title>照片墙，热点发现</title>
+<link type="text/css" rel="stylesheet" href="http://{{localip}}/site_medias/css/shCoreDefault.css"/>
+ <style type="text/css">  
+ 
+  </style> 
+<link href="http://{{localip}}/site_medias/css/lrtk.css" rel="stylesheet" type="text/css" />
+<link href="http://{{localip}}/site_medias/css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://{{localip}}/site_medias/js/lrtk.js"></script>
+<div class="container">
+<div class="well well-sm">
+<a href="/MyBlog/">首页</a><span>&nbsp;/&nbsp;</span><a href="#">频道</a><span>&nbsp;/&nbsp;</span><span>显示照片墙</span>
+</div>
+<div class="col-sm-3 col-md-2">
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            频道导航
+        </h3>
+    </div>
+    <div class="panel-body">
+<ul class="nav nav-pills nav-stacked">
+{% for type in types %}
+<li><a href="http://{{ localip }}/MyBlog/classfy/{{ type.id }}/" title="{{ type.id }}">{{ type.typename }}</a></li>
+{% endfor %}
+<li><a href="http://{{ localip }}/MyBlog/classfy/11/" >更多文章分类 >></a></li> 
+</ul>
+</div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            文章存档
+        </h3>
+    </div>
+    <div class="panel-body">
+<ul class="nav nav-pills nav-stacked">
+{% for cd in cds %}
+
+<li><a href="http://{{ localip }}/MyBlog/ym/{{ cd.year }}/{{ cd.month }}/" title="文章数量{{ cd.number }}">{{ cd.year }}年{{ cd.month }}月&nbsp;<span class="badge pull-right">{{ cd.number }}</span></a></li>
+
+{% endfor %}
+
+<li><a href="http://{{ localip }}/MyBlog/ym/2014/12/" >更多存档文章 >></a></li> 
+
+</ul>
+</div>
+</div>
+
+</div>
+
+<div class="col-sm-9 col-md-10">
+
+<div class="panel panel-success" style="margin:5px;padding:10px;">
+
+<div class="row">
+
+
+
+
+<ul style="margin-bottom:10px;">
+
+
+{% for photo in photos %}
+
+<div class="col-sm-6 col-md-4">
+<li>
+      <div class="listimg"><a id="imgbox{{photo.id}}" href="http://{{localip}}/site_medias/{{photo.imageurl}}"><img src="http://{{localip}}/site_medias/{{photo.imageurl}}" class="attachment-thumbnail wp-post-image"/></a>
+        <div class="summary">
+          <div class="summarytxt">
+            <p>点赞</p>
+          </div>
+        </div>
+      </div>
+      <div class="listinfo">
+        <div class="listtitle"><a href="#" >{{photo.imagename}}</a></div>
+        <div class="listtag"><a href="../" rel="tag">上传者：{{photo.username}}</a><a href="../static/{{photo.imageurl}}" rel="tag">原图</a></div>
+        <div class="listdate">{{photo.uploadtime|date:"Y-n-d"}}</div>
+        <div class="listview">{{photo.imagesize}}KB</div>
+        <div class="listcomment"><a href="/zanphoto/{{photo.id}}">{{photo.zanclick}}赞</a></div>
+       </div>
+</li>
+</div>
+<script src="http://{{localip}}/site_medias/js/jquery.min.js"></script>
+<script src="http://{{localip}}/site_medias/js/jquery.imgbox.pack.js"></script>
+<script>
+$(function(){
+	$("#imgbox{{photo.id}}").imgbox({
+	    'speedIn'		: 0,
+		'speedOut'		: 0,
+		'alignment'		: 'center',
+		'overlayShow'	: true,
+		'allowMultiple'	: false
+	});
+});
+</script>
+{% endfor %}
+
+</ul>
+
+
+
+</div>
+<div class="row" style="margin:5px;">
+<ul class="pagination pagination">
+{% if is_paginated %}
+                    {% ifequal current_page 1 %}<li><a>首页 </a><li>
+                    {% else %}<li><a href="?p=1&ps={{ pagesize }}">首页</a><li>
+                    {% endifequal %}
+                    {% if has_previous %} <li><a href="?p={{ previous_page }}&ps={{ pagesize }}">&larr;</a></li>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <li><a>{{ current_page }}</a></li>   
+                    {% else %}
+                        <li><a href="?p={{ p }}&ps={{ pagesize }}">{{ p }}</a></li>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<li><a href="?p={{ next_page }}&ps={{ pagesize }}">&rarr;</a></li>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<li><a>末页</a></li>
+                    {% else %} <li><a href="?p={{ pages }}&ps={{ pagesize }}">末页</a></li>
+                    {% endifequal %}
+                    <li><a>页{{ current_page }}/共{{ pages }}页 &nbsp;共{{ hits }}张</a></li>
+                        <li><a href="?p=1&ps=6">6张/页</a> </li>
+   
+     {% endif %}  
+
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+{% endblock %}

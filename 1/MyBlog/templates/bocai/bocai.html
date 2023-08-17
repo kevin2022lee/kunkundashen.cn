@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="/static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+    <title>Bocai Code Solver--开盘页面</title>
+	
+</head>
+
+<body>
+
+<div class="container">
+{% extends "bocai/base.html" %}     
+{% block content %} 
+
+<div class="panel">
+
+<div class= "well">
+
+<form role="form" action="../kaipan/" method="POST">{% csrf_token %}
+  <div class="form-group">
+    <label for="clkpinfo">输入菠菜开盘网址（静态网页）==免翻墙网址</label>
+    <textarea id="clkpinfo" name="clkpinfo" rows="6" class="form-control" >
+    每行输入一个网址
+    </textarea>
+    <br>
+    <p>
+  <button type="submit" class="btn btn-primary btn-lg btn-block">获取开盘信息</button>
+
+  	</p>
+  </div>
+ </form>
+
+<hr>
+</div>
+
+</div>
+</div>
+
+
+{% endblock %}
+</body>
+</html>
