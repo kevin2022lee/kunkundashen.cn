@@ -74,7 +74,7 @@ else:
     MYSQL_HOST = 'kkds1314.mysql.rds.aliyuncs.com'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'kkds1314'
-    MYSQL_PASS = '3@4B8976abc'
+    MYSQL_PASS = '************'
     MYSQL_DB   = 'app_kkds1314'
 
 DATABASES = {
