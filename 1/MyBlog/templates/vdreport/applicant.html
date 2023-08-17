@@ -1,0 +1,147 @@
+{% extends "vdreport/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>维生素D及钙吸收能力基因检测报告系统-基本信息录入</title>     
+       <head>
+    <title></title>
+    <link href="http://www.kunkundashen.cn/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+            <div class="row">
+            <div class="well well-sm">
+             <form  action="http://{{ localip }}/applicantpost/" method="POST">{% csrf_token %}
+<table class="table table-bordered">
+  <caption><h3><b><center>维生素D及钙吸收能力基因检测报告基本信息录入</b></center></h3></caption>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>信息</th>
+      <th>项目</th>
+      <th>信息</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>姓名：</td>
+      <td><input id="typename" type="text" placeholder="Name" class="title" name="Name" value="" /></td>
+      <td>联系电话：</td>
+      <td><input id="typename" type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="Telphone" class="title" name="Telphone" value="" /></td>
+    </tr>
+    <tr>
+      <td>年龄：</td>
+      <td><input id="typename" type="text" oninput="value=value.replace(/[^\d]/g,'')" placeholder="Age" class="title" name="Age" value="" /></td>
+      <td>接收日期：</td>
+      <td>
+      <div class="control-group">
+                <div class="controls input-append date form_datetime"  data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input1">
+                    <input placeholder="R_date" size="16" type="text" value="" readonly>
+                    <span class="add-on"><i class="icon-remove"></i></span>
+                    <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+                <input name="R_date" type="hidden" id="dtp_input1" value="" />
+            </div>
+      </td>
+    </tr>
+    <tr>
+      <td>性别：</td>
+      <td><select id="sex" name="Sex" >
+      <option value="男">男</option>
+      <option value="女">女</option>
+      </select>
+      </td>
+      <td>报告日期：</td>
+      <td>
+      <div class="control-group">
+                <div class="controls input-append date form_datetime"  data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input2">
+                    <input placeholder="P_date" size="16" type="text" value="" readonly>
+                    <span class="add-on"><i class="icon-remove"></i></span>
+                    <span class="add-on"><i class="icon-th"></i></span>
+                </div>
+                <input name="P_date" type="hidden" id="dtp_input2" value="" />
+            </div>
+      </td>
+    </tr>
+    <tr>
+      <td>医生：</td>
+      <td><input id="typename" type="text" placeholder="doctor" class="title" name="Doctor" value="" /></td>
+      <td>送检医院：</td>
+      <td><input id="typename" type="text" placeholder="Hospital" class="title" name="Hospital" value="" /></td>
+    </tr>
+    <hr/>
+    <tr>
+      <td>样本评估：</td>
+      <td>
+      <select id="Assess" name="Assess">
+      <option value="满意">满意</option>
+      <option value="良好">良好</option>
+      <option value="很差">很差</option>
+      <option value="未取到">未取到</option>
+      </select>
+      </td>
+      <td>检测方法：</td>
+      <td><input id="typename" type="text" placeholder="Method" class="title" name="Method" value="" /></td>
+    </tr>
+    <tr>
+    <td colspan="4">
+    <center>
+      <button type="submit" class="btn btn-primary btn-xs">录入系统</button>
+      <button type="reset" class="btn btn-primary btn-xs">清除信息</button>
+    </center>
+    </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.kunkundashen.cn/static/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+    });
+</script>
+    <!-- /#wrapper -->
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "vdreport/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>维生素D及钙吸收能力基因检测报告系统-信息一览</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+            <div class="well well-sm">
+
+<table class="table table-bordered">
+  <caption><h3><b><center>维生素D及钙吸收能力基因检测报告系统待录入检测信息一览表</b></center></h3></caption>
+    <thead>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>电话</th>
+      <th>性别</th>
+      <th>接收日期</th>
+      <th>报告日期</th>
+      <th>医生</th>
+      <th>医院</th>
+      <th>样本满意度</th>
+      <th>检测方法</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for applicant in applicants %}
+    <tr>
+     <td>{{applicant.name}}</td>
+     <td>{{applicant.age}}</td>
+     <td>{{applicant.telphone}}</td>
+     <td>{{applicant.sex}}</td>
+     <td>{{applicant.received_date|date:"Y-m-d H:i:s"}}</td>
+     <td>{{applicant.report_date|date:"Y-m-d H:i:s"}}</td>
+     <td>{{applicant.doctor}}</td>
+     <td>{{applicant.hospital}}</td>
+     <td>{{applicant.assess}}</td>
+     <td>{{applicant.method}}</td>
+     <td><a href="../applicant_result_admin/{{applicant.id}}"/>录入结果</a></td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "vdreport/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>维生素D及钙吸收能力基因检测报告-报告查询打印</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+<form class="form" action="" method="GET">
+<center>
+<div class="panel panel-primary">
+<label>输入报告者联系电话：</label>
+<input name="Telphone" id="Telphone" class="input" type="text" placeholder="输入报告人手机号"  oninput="value=value.replace(/[^\d]/g,'')"  value="" />
+<button class="btn btn-primary" type="submit">检索报告</button>
+</div>
+</form>
+ <div class="well well-sm">
+<table class="table table-bordered">
+  <caption><h3><b><center>维生素D及钙吸收能力基因检测报告系统已打印报告信息一览表</b></center></h3></caption>
+    <thead>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>电话</th>
+      <th>性别</th>
+      <th>接收日期</th>
+      <th>Apal基因检测结果</th>
+      <th>Taql基因检测结果</th>
+      <th>Bsml基因检测结果</th>
+      <th>Fokl基因检测结果</th>
+      <th>维生素推荐摄入量</th>
+      <th>钙推荐摄入量</th>
+      <th>报告日期</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for applicant_printed in applicant_printeds %}
+    <tr>
+     <td>{{applicant_printed.name}}</td>
+     <td>{{applicant_printed.age}}</td>
+     <td>{{applicant_printed.telphone}}</td>
+     <td>{{applicant_printed.sex}}</td>
+     <td>{{applicant_printed.received_date|date:"Y-m-d H:i:s"}}</td>
+     <td>{{applicant_printed.apal}}--{{applicant_printed.apal_type}}</td>
+     <td>{{applicant_printed.taql}}--{{applicant_printed.taql_type}}</td>
+     <td>{{applicant_printed.bsml}}--{{applicant_printed.bsml_type}}</td>
+     <td>{{applicant_printed.fokl}}--{{applicant_printed.fokl_type}}</td>
+     <td>{{applicant_printed.Vd}}</td>
+     <td>{{applicant_printed.Ga}}</td>
+     <td>{{applicant_printed.timestamp|date:"Y-m-d H:i:s"}}</td>
+     <td><a target="_blank" href="../applicant_printed_admin/{{applicant_printed.id}}/"/>打印预览</a></td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

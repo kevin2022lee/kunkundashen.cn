@@ -1,0 +1,43 @@
+{% extends "admin/admin-base.html" %} 
+ {% block userdefine %}
+    <title>坤坤大神内容管理系统-小黑屋管理</title>     
+     
+            <div class="row">
+                <div class="col-lg-10">
+                  <div class="table-responsive">
+  <table class="table">
+    <caption><center><b>坤坤大神文章系统--系统用户一览表</b></center></caption>
+    <thead>
+      <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>状态</th>
+        <th>禁用用户</th>
+        <th>管理设定</th></tr>
+    </thead>
+    <tbody>
+    {% for u in uu %}
+      <tr>
+        <td>{{u.username}}</td>
+        <td>{{u.email}}</td>
+        <td>正常</td>
+        <td><button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/MyBlog/forbidden/?id={{ u.id }}'">禁用用户</button></td>
+        <td><button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/MyBlog/setsuper/?id={{ u.id }}'">设为管理员</button></td>
+        </tr>
+     {%endfor%} 
+       
+    </tbody>
+  </table>
+</div>
+
+                </div>
+                
+                <!-- /.col-lg-10 -->
+
+          </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+ {% endblock %}

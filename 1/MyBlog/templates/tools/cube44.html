@@ -1,0 +1,76 @@
+{% extends "tools/cube_base.html" %} 
+ {% block content %} 
+ 
+ <title>国际四阶魔方求解器- 最棒的在线免费app</title>
+  <header>
+ 
+	<div class="header">
+		<div class="headerInner clearfix">
+			<h1>
+				欢迎使用大神魔方求解器V1.05
+			</h1>
+			<div id="puzzleNav">
+				<ul>
+					<li><a href="/cube" class="two" title="2x2 Solver">2x2</a></li>
+					<li><a href="/cube_3x3/" class="three" title="Rubik's Cube Solver">3x3</a></li>
+					<li><a href="https://cube-solver.com/#id=4" class="four active" title="4x4 Solver">4x4</a></li>
+					<li><a href="/cube_pyraminx/" class="pyra" title="Pyraminx Solver">Pyraminx</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="switchViewWrap">
+		<h3>二阶魔方求解器</h3>
+	</div>
+</header>
+<div class="panel panel-info">
+	<div id="switchViewWrap">
+		<h3>欢迎使用坤坤大神魔方求解器</h3>
+	</div>
+	<div class="wrapArticle clearfix">
+		<article>
+			<h1>四阶魔方求解器</h1>
+			<p><strong>我们已经开始致力于4阶魔方的程序编译工作, 或许这将是第一个在线的4阶魔方app请及时返回查看我的页面更新!</strong></p>
+			<p>返回主页<a href="/">坤坤大神的部落格</a> 或者尝试2阶魔方和金字塔魔方求解器 </p>
+			<hr />
+			<p style="text-aligh: center;">
+			<a href="https://ruwix.com/twisty-puzzles/4x4x4-rubiks-cube-rubiks-revenge/" target="_blank" class="funkyButton">了解最新4阶魔方解决方案进展</a>
+			</p>
+			<p><strong>同时了解并学习最新的4阶魔方! </strong><br />这个并不复杂，只是将每个字段添加到求解器并使得旋转更容易</p>
+			
+		</article>
+	</div>
+	
+<style>
+.funkyButton {
+    display: block;
+    font-size: 30px;
+    color: #FFF !important;
+    background: url(funky_cube4.png) right top no-repeat #43627f;
+    padding: 0 10px 0 50px;
+    line-height: 115px;
+    font-weight: bold;
+    transition: 1s all;
+    border-radius: 40px;
+    box-shadow: 3px 3px 7px #333;
+    text-decoration: none !important;
+    margin: 45px auto;
+    width: 561px;
+}
+.funkyButton:hover {
+    background-color: #5688b6;
+    background-position: right -112px;
+}
+@media screen and (max-width: 850px){
+.funkyButton {
+    background-image: none;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 30px;
+}
+}
+</style>
+</div>
+ {% endblock %}

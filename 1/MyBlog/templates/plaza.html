@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="ua-windows ua-webkit">
+<head>
+<meta name="baidu_union_verify" content="45d4ddc45322593ad334136a79f38ae4">
+<meta charset="UTF-8">
+<meta content="提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活。" name="description">
+<title>大神的部落广场</title>
+
+<link rel="stylesheet" href="http://{{ localip }}/site_medias/css/plaza_init.css">
+<link rel="stylesheet" href="http://{{ localip }}/site_medias/css/anymous_home.css">
+<!-- COLLECTED CSS -->
+</head>
+
+<body>
+  <div id="anony-nav">
+    <div class="anony-nav-links">
+    <ul>
+    <li> <a target="_blank" class="lnk-book" href="http://{{ localip }}/book/">大神的部落读书</a></li>
+    <li> <a target="_blank" class="lnk-movie" href="http://{{ localip }}/movie/">大神的部落电影</a></li>
+    <li> <a target="_blank" class="lnk-group" href="http://{{ localip }}/MyBlog/">大神的部落格</a></li>
+    </ul>
+    </div>
+
+    <h1><a href="http://{{ localip }}">大神的部落</a></h1>
+
+    <div class="anony-srh">
+    <form action="http://{{ localip }}/MyBlog/search/" method="post">
+      <span class="inp"><input type="text" maxlength="60" size="12" placeholder="书籍、电影、小站、成员" name="search_words" autocomplete="off"></span>
+    <span class="bn"><input type="submit" value="搜索"></span>
+    </form>
+    </div>
+  </div>
+<div id="anony-reg">
+  <div class="wrapper">
+    
+
+<div class="login">
+    <form id="lzform" name="lzform" method="post" action="http://{{ localip }}/MyBlog/login/">{% csrf_token %}
+        <fieldset>
+            <legend>登录</legend>
+            <input type="hidden" value="index_nav" name="source">
+            <div class="item item-account">
+                <input type="text" name="account" id="form_email" value="" class="inp" placeholder="账号" tabIndex="1">
+                <div class="opt"><label for="form_remember"><input name="remember" type="checkbox" id="form_remember" tabIndex="4">记住我</label></div>
+            </div>
+            <div class="item item-passwd">
+                <input name="password" placeholder="密码" id="form_password" class="inp" type="password" tabIndex="2">
+                <div class="opt"><a href="http://{{ localip }}/MyBlog/accounts/resetpassword">忘记密码</a></div>
+            </div>
+            <div class="item-submit">
+                <input value="登录" type="submit" class="bn-submit" tabIndex="4">
+            </div>
+        </fieldset>
+    </form>
+    <div style="display:none;">
+        <img src="http://23.106.151.244/site_medias/imgs/blank.gif"   onload="(function(url){document.getElementById('lzform').action=url;})('http://{{ localip }}/MyBlog/login/')"/>
+    </div>
+</div>
+  
+    <div class="reg">
+        
+        <a href="http://{{ localip }}/MyBlog/register/" class="lnk-reg">加入我们 <i>注册</i></a>
+        <div class="nb-info">
+        <b>发现更多生活</b>
+        </div>
+    </div>
+  </div>
+</div>           
+<div id="anony-sns" class="section">
+  <div class="wrapper">
+  <div class="side">
+
+  <div style="margin:10px 0px;">
+      <a target="_blank" href="http://moment.douban.com/app"><img width="265" src="http://{{localip}}/site_medias/imgs/file-1431585796.jpg"></a>
+ </div>
+  
+    <h2>
+        最热帖子
+            &nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;&nbsp;&middot;
+            <span class="pl">&nbsp;(
+                
+                    <a href="http://{{localip}}/MyBlog/" target="_self">更多</a>
+                ) </span>
+    </h2>
+
+  <div class="online">
+    <ul>
+    {% for hot in hotarticles %}
+        <li>
+            <div class="title">
+                <a href="http://{{ localip }}/MyBlog/topics/{{ hot.id }}/">{{ hot.title }}</a>
+            </div>
+            <div class="desc">
+                时间：{{ hot.timestamp|date:"Y-n-d"}}
+                <br><span class="num">{{ hot.article_click }}人参加</span>
+            </div>
+        </li>
+{% endfor %}
+    </ul>
+  </div>
+</div>
+  <div class="main">
+<div class="mod">
+
+  
+    <h2>
+        热点内容
+            ······
+    </h2>
+
+  <div class="albums">
+    <ul>
+    {% for pic in pics %}
+      <li>
+      <div class="pic">
+          <a href="#" title="{{ pic.imagesize }}KB"><img class="img-responsive" src="http://{{localip}}/site_medias/{{ pic.imageurl }}" data-origin="{{ pic.imageurl }}" alt="" /></a>
+      </div>
+      <a href="#">{{ pic.username }}</a>
+      <span class="num">{{ pic.imagename }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="notes">
+ {% for first in firsts %} 
+    <ul>
+      <li class="first">
+      <div class="title">
+          <a href="http://{{ localip }}/MyBlog/topics/{{ first.id }}/">{{ first.title }}</a>
+      </div>
+      <div class="author">
+        {{ first.u }}
+      </div>
+      <p>{{ first.content|striptags|safe|escape|slice:"50" }}....</p>
+      </li>
+   {% endfor %}
+  {% for plaza in plazas %} 
+      <li><a href="http://{{ localip }}/MyBlog/topics/{{ plaza.id }}/">{{ plaza.title }}</a></li>
+    </ul>
+    {% endfor %}
+  </div>
+</div>
+</div>
+  </div>
+  
+<div id="dale_anonymous_home_page_top" class="extra"></div>
+
+</div> 
+<div class="wrapper">
+  <div id="dale_anonymous_home_page_bottom" class="extra"></div>
+  <div id="ft">
+
+<div class="fleft">
+   <a href="http://{{ localip }}/MyBlog/">首页</a>&nbsp;&nbsp;
+ <font style="font-family:arial,Times New Roman;">CopyRights@2013~{{ thisyear }}</font>
+ 本页面访问量统计：{{ count }}人访问本页面！
+<div id="beian" style="text-align:center;">
+本应用由阿里云计算平台提供服务支持
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257476379'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1257476379%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+<img alt="云计算提供商" width="100" src="http://{{localip}}/site_medias/imgs/aliyun.png"><br>
+本站工信部备案号：<a href="https://www.baidu.com/link?url=gQPQWFBQnLQutGo70zsAcV2ucrT5TpwWWiqjzh5QBESDgMbXINlwX0KOz92Kg748&wd=&eqid=a71ab6a500025db7000000035b38f11f">豫ICP备14029863号-1</a>  
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=bd9472b87a3d35d77384ec07deb6035e5028cb73b1419d55162ab0da545d0644"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="升龙又一城F区业主群" title="升龙又一城F区业主群"></a>
+</div>
+</div>
+ </div>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,39 @@
+{% extends "admin/admin-base.html" %} 
+ {% block userdefine %}
+    <title>坤坤大神内容管理系统-评论审核管理</title>     
+   
+            <div class="row">
+                <div class="col-lg-10">
+    {% for comment in comments %}
+        <div class="post">
+            <h3>
+                <a href="#" class="text-info">
+                   {{ comment.r.title }}
+                </a>
+            </h3>
+            <div class="card">
+                <div class="card-header">
+                    发布时间：{{ comment.createtime |date:"Y-n-d" }}  作者：{{ comment.u.username }}
+                </div>
+                <div class="card-body">
+                   评论内容： {{ comment.rcontent |striptags|safe|truncatechars:500|linebreaks}} 
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/ReplyPost/unrecycle/?id={{ comment.id }}'">审核通过</button>
+            <button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/ReplyPost/delete/?id={{ comment.id }}'">删除评论</button>
+
+        </div>
+<hr>
+    {% endfor %}
+
+                </div>
+                
+                <!-- /.col-lg-10 -->
+
+          </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+ {% endblock %}

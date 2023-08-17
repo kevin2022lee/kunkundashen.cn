@@ -1,0 +1,124 @@
+{% extends "base21.html" %} 
+ {% block content %} 
+ <title>我的读书单</title>
+
+</head>  
+ 
+ <div class="row">
+ 
+    <div class="col-sm-8">
+     <div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            豆瓣图书 标签为“{{tag}}”的图书信息列表
+        </h3>
+    </div>
+    <div class="panel-body">
+    
+ <ul class="pagination pagination">   
+    <li><h4><label class="label label-success">共检索到关键字为“{{tag}}”的书籍 共{{ hits }}本</label></h4> </li>
+</ul>
+ 
+
+        <p class="ulfirst"></p> 
+{% for b in books %}
+      <table width="100%">
+        <tr class="item">
+          <td width="100" valign="top">
+            <a class="nbg" href="{{b.baddr}}"
+              onclick="moreurl(this,{i:'0'})"
+
+              >
+              <img class="img" src="{{b.bimage}}" width="64" />
+            </a>
+          </td>
+          <td valign="top">
+            
+            <div class="pl2">
+
+
+              <a href="{{b.baddr}}" onclick=&#34;moreurl(this,{i:&#39;0&#39;})&#34; title="{{b.bname}}">{{b.bname}} </a>
+                &nbsp; <img src="https://img3.doubanio.com/pics/read.gif" alt="可试读" title="可试读"/>
+            </div>
+              <p class="pl">作者：{{b.bauthor}}</p>             
+              <div>
+                  <span><em>豆瓣评分：</em>{{b.brnum}}<b>分</b></span>
+                  <span class="pl">{{b.bcp}}</span>
+              </div>
+
+            
+              <p class="quote" style="margin: 10px 0; color: #666">
+                  <span class="inq">“{{b.bdescription}}”</span>
+              </p>
+
+
+          </td>
+        </tr>
+      </table>
+        <p class="ul"></p>
+{% endfor %}
+ 
+</div>
+</div>
+<ul class="pagination pagination">
+{% if is_paginated %}
+                    {% ifequal current_page 1 %}<li><a>首页 </a><li>
+                    {% else %}<li><a href="?tag={{tag}}&p=1&ps={{ pagesize }}">首页</a><li>
+                    {% endifequal %}
+                    {% if has_previous %} <li><a href="?tag={{tag}}&p={{ previous_page }}&ps={{ pagesize }}">&larr;</a></li>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <li><a>{{ current_page }}</a></li>   
+                    {% else %}
+                        <li><a href="?tag={{tag}}&p={{ p }}&ps={{ pagesize }}">{{ p }}</a></li>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<li><a href="?tag={{tag}}&p={{ next_page }}&ps={{ pagesize }}">&rarr;</a></li>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<li><a>末页</a></li>
+                    {% else %} <li><a href="?tag={{tag}}&p={{ pages }}&ps={{ pagesize }}">末页</a></li>
+                    {% endifequal %}
+                    <li><a>页{{ current_page }}/共{{ pages }}页 &nbsp;共{{ hits }}篇</a></li>
+                             
+     {% endif %}  
+
+</ul>
+
+ 
+</div>    
+
+<div class="col-sm-4">
+        <div class="well well-lg">
+  <span class="indent pl">
+    豆瓣用户每天都在对“读过”的书进行“很差”到“力荐”的评价，豆瓣根据每本书读过的人数以及该书所得的评价等综合数据，通过算法分析产生了豆瓣图书250。
+  </span>
+  </div>
+  
+  <div class="panel panel-info">
+<div class="panel panel-heading">
+<a name="文学" class="tag-title-wrapper">
+<h4 class="panel-title">热门标签 · · · · · · </h4>
+ </a>
+ </div>
+ <div class="panel-body">
+{% for tag in tags %}      
+ <div class="col-sm-3 col-md-4" style="margin-top:8px;margin-bottom:5px;">
+<span class="label label-success label-middle" ><a href="/book/?tag={{tag.btype}}">{{tag.btype}}&nbsp;&nbsp;</span></a>
+</div>
+{%endfor%}
+</div>
+ </div>
+  
+  
+  
+ </div>
+      
+</div>
+
+</div>
+
+
+ {% endblock %}

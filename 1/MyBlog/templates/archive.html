@@ -1,0 +1,225 @@
+{% extends "base21.html" %}   
+{% block content %} 
+<title>坤坤大神的部落格首页</title>
+<script>
+	$(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
+
+
+<!--模板开始 -->
+    <div class="row">
+
+<div class="col-sm-9 col-md-9 col-lg-9" >
+ 
+ 
+ {% for post in posts %}
+ 
+ 
+<div class="panel panel-success">
+    <div class="panel-heading">
+    
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-list" >分类：</span>{{post.typename}}
+            <a href="http://{{ localip }}/MyBlog/topics/{{ post.id }}/" class="tooltip-test" data-toggle="tooltip" data-placement="left" >
+            <span class="glyphicon glyphicon-book" >博文：</span>{{ post.title}}</a>
+        </h3>
+        
+    </div>
+    
+    <div class="row" style="margin-left:3px;margin-top:4px;">
+   &nbsp;&nbsp;&nbsp;
+        <span class="glyphicon glyphicon-user label label-info">&nbsp;{{ post.username }}&nbsp;</span>
+
+         <span class="glyphicon glyphicon-eye-open label label-info">&nbsp;{{ post.article_click}}次&nbsp;</span>
+
+          <span class="glyphicon glyphicon-time label label-info">&nbsp;{{ post.timestamp|date:"Y-n-d" }}&nbsp;</span>
+          
+    </div>
+    
+    <div class="panel-body">
+        {{ post.content|striptags|safe|truncatechars:200|linebreaks}}
+        <span class="label label-info"><a title="{{ post.title}}" href="http://{{ localip }}/MyBlog/topics/{{ post.id }}/">阅读全文>>
+        </a></span>
+    </div>
+</div>  
+
+
+{% endfor %}
+
+        
+
+
+<ul class="pagination pagination">
+{% if is_paginated %}
+                    {% ifequal current_page 1 %}<li><a>首页 </a><li>
+                    {% else %}<li><a href="?p=1&ps={{ pagesize }}">首页</a><li>
+                    {% endifequal %}
+                    {% if has_previous %} <li><a href="?p={{ previous_page }}&ps={{ pagesize }}">&larr;</a></li>
+                    {% else %} 
+                    {% endif %}
+                    {% for p in page_numbers %}
+                    {% ifequal current_page p %}
+                        <li><a>{{ current_page }}</a></li>   
+                    {% else %}
+                        <li><a href="?p={{ p }}&ps={{ pagesize }}">{{ p }}</a></li>  
+                    {% endifequal %}
+                    {% endfor %}                    
+                    {% if has_next %}<li><a href="?p={{ next_page }}&ps={{ pagesize }}">&rarr;</a></li>
+                    {% else %}
+                    {% endif %}
+                    {% ifequal current_page pages %}<li><a>末页</a></li>
+                    {% else %} <li><a href="?p={{ pages }}&ps={{ pagesize }}">末页</a></li>
+                    {% endifequal %}
+                    <li><a>页{{ current_page }}/共{{ pages }}页 &nbsp;共{{ hits }}篇</a></li>
+                        <li><a href="?p=1&ps=20">20篇文章/页</a> </li>
+                             <li><a href="?p=1&ps=40">40篇文章/页</a> </li>
+     {% endif %}  
+
+</ul>
+<div class="panel panel-success">
+    <div class="panel-heading">
+    
+        <h3 class="panel-title">
+            标签云
+        </h3>
+        
+    </div>
+    <div class="panel-body">
+    <p>
+    
+<a href="#"><span class="label label-success label-large">正在施工中</span></a>
+<a href="#"><span class="label label-success label-large">更多标记</span></a>
+<a href="#"><span class="label label-success label-large">。。。</span></a>
+<a href="#"><span class="label label-success label-large">正在施工中</span></a>
+<a href="#"><span class="label label-success label-large">更多标记</span></a>
+<a href="#"><span class="label label-success label-large">。。。</span></a>
+</p>
+    </div>   
+ </div>
+
+
+         
+        </div>
+        
+
+
+
+        
+<div class="col-sm-3 col-md-3 col-lg-3">
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ <div class="panel panel-success">
+ <div class="panel-heading">
+      联系博主
+    </div>
+    <div class="panel-body">
+
+            <img width="220px" class="img-responsive" src="http://{{localip}}/site_medias/imgs/me.jpg" alt="">
+            <ul class="nav nav-pills nav-stacked">
+                <li><strong>坤坤大神</strong>,资深不务正业者</li>
+                <li>从事生物医药行业,爱好：编程、钓鱼、路亚</li>
+                <li><strong>日拱一卒，功不唐捐</strong></li>
+                <li>欢迎给我留言交流</li>
+            </ul>
+
+        
+    </div>
+</div>
+  
+  
+
+
+<div class="panel panel-success">
+ <div class="panel-heading">
+     文章分类
+    </div>
+    <div class="panel-body">
+            <ul class="nav nav-pills nav-stacked">
+            {% for type in types %}
+            <li>
+            <a href="http://{{ localip }}/MyBlog/classfy/{{ type.id }}/" title="{{ type.name}}">
+            {{ type.typename }}
+            &nbsp;<span class="badge pull-right">{{ type.id }}</span>
+            </a>
+            </li>
+            {% endfor %}
+            <li><a href="http://{{ localip }}/MyBlog/classfy/11/" >更多文章分类 >></a></li> 
+            </ul>
+        
+    </div>
+</div>   
+  
+
+
+
+<div class="panel panel-success">
+ <div class="panel-heading">
+     文章存档
+    </div>
+    <div class="panel-body">
+           
+{% for cd in cds %}
+<ul class="nav nav-pills nav-stacked">
+<li><a href="http://{{ localip }}/MyBlog/ym/{{ cd.year }}/{{ cd.month }}/" title="文章数量{{ cd.number }}">{{ cd.year }}年{{ cd.month }}月&nbsp;<span class="badge pull-right">{{ cd.number }}</span></a></li>
+
+{% endfor %}
+
+<li><a href="http://{{ localip }}/MyBlog/ym/2014/12/" >更多存档文章 >></a></li> 
+</ul>       
+    </div>
+</div>   
+  
+
+
+  
+<div class="panel panel-success">
+ <div class="panel-heading">
+     技术常用链接
+    </div>
+    <div class="panel-body">  
+  
+<ul class="nav nav-pills nav-stacked">
+				<li><a href="http://www.probedesigner.cn" title="QuantiMAT探针设计">QuantiMAT探针设计</a></li>
+				<li><a href="http://www.kunkundashen.cn/primer/" title="PCR引物设计">PCR引物设计</a></li>
+				<li><a href="http://www.kunkundashen.cn/cube/" title="魔方求解器">魔方求解器</a></li>
+               <li><a href="http://www.pinlue.com/article/2018/09/1308/477080601139.html" title="分子生物学工具">分子生物学工具</a></li>
+               <li><a href="https://www.pythontab.com/" title="python社区讨论组">python社区讨论组</a></li>
+               <li><a href="https://www.douban.com/group/topic/27905236/?refer=related" title="旅游见闻分享">旅游见闻分享</a></li>
+               <li><a href="http://down.chinaz.com/" title="源码下载">源码下载</a></li>
+               <li><a href="http://www.infzm.com/review.shtml" title="南方周末版">南方周末评论版</a></li>
+               <li><a href="https://www.ikea.cn/" title="家居小技巧">家居小技巧</a></li>
+               			   <li><a href="http://cuiqingcai.com" title="静觅，崔庆才的博客">崔庆才的博客</a></li>
+               <li><a href="https://www.huodongxing.com/" title="周末指南">周末指南</a></li>
+               <li><a href="http://www.w3school.com.cn/tags/index.asp" title="HTML-W3C">HTML-W3C</a></li>
+               <li><a href="https://www.yinxiang.com/" title="学习笔记">学习笔记</a></li>
+               <li><a href="https://www.runoob.com/linux/linux-tutorial.html" title="Linux开发">Linux开发</a></li>
+               <li><a href="https://developer.android.google.cn/" title="Android开发">Android开发</a></li>
+               <li><a href="https://www.bootcss.com/" title="BootStrap快速开发">BootStrap快速开发</a></li>
+               <li><a href="https://www.processon.com/" title="快速画图软件">ProcessOn思维导图</a></li>
+               <li><a href="https://www.biorender.com/" title="快速原理软件">BioRender画图</a></li>
+               <li><a href="https://www.ncbi.nlm.nih.gov" title="美国国立生物医学研究所">NCBI资源库</a></li>
+               <li><a href="http://www.probedesigner.cn" title="QuantiMAT探针设计">QuantiMAT探针设计</a></li>
+            </ul>
+
+        </div>
+</div>   
+     
+ 
+            
+
+  
+         
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

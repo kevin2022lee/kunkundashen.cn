@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://8.136.216.2/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="http://8.136.216.2/static/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="http://8.136.216.2/static/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="http://8.136.216.2/static/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://8.136.216.2/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+{% if request.session.is_logined %}
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">诺森医学采购渠道管理系统v1.1</a>
+            </div>
+            <!-- /.navbar-header -->
+
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 基础内容管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://8.136.216.2/material_admin/">物料信息录入</a>
+                                </li>
+                                <li>
+                                    <a href="http://8.136.216.2/contact_admin/">联系人录入</a>
+                                </li>
+                                <li>
+                                    <a href="http://8.136.216.2/material_list/">渠道信息录入</a>
+                                </li>
+                                <li>
+                                    <a href="http://8.136.216.2/material_contact_list/">报价信息录入</a>
+                                </li>
+
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>报表管理</a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="http://8.136.216.2/material_contact_query/">渠道查询</a>
+                                </li>
+                                 <li>
+                                    <a href="http://8.136.216.2/material_query_all/">物料一览</a>
+                                </li>
+                                <li>
+                                    <a href="http://8.136.216.2/material_query/">研发查询</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> 系统设置</a>
+                            <ul class="nav nav-second-level">
+                             <li>
+                                    <a href="http://8.136.216.2/reset_password/">修改密码</a>
+                                </li>
+                                <li>
+                                    <a href="http://8.136.216.2/paloginout/">注销登录</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                       
+                       
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+           <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header">控制面板->Hello,{{ request.session.nick }}</h3>
+                    <p>上次登陆时间：{{ request.session.lastlogin }}</p>
+                    <p>上次登陆IP地址：{{ request.session.IP }}</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+    <hr>       
+    
+ {% block userdefine %}
+ <!-- 此处为模板引用位置 -->
+ {% endblock %}
+    
+    <!-- jQuery -->
+    <script src="http://8.136.216.2/static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://8.136.216.2/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="http://8.136.216.2/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="http://8.136.216.2/static/vendor/raphael/raphael.min.js"></script>
+    <script src="http://8.136.216.2/static/vendor/morrisjs/morris.min.js"></script>
+    <script src="http://8.136.216.2/static/data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="http://8.136.216.2/static/js/sb-admin-2.js"></script>
+    
+
+{% else %}
+
+<p text-align="center">你没有管理权限！</p>
+
+{% endif %}
+<footer>
+ <div text-align="center"> Copyright &copy; 2022.Company name All rights reserved. 诺森医学检验采购渠道管理系统v1.1</div>
+</footer>
+</body>
+
+
+</html>

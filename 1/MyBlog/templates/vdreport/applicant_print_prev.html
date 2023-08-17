@@ -1,0 +1,236 @@
+<html>
+{% for applicant_print_prev in applicant_print_prevs%}
+<title>{{applicant_print_prev.name}}的维生素D以及钙吸收报告预览--诺森医学检验，民众身边的健康专家</title>
+<link href="/static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+@media print { 
+ .noprint{display:none;}
+}
+.con_img{position: relative;}
+.jianjie{position: absolute;bottom: 905;left: 120; width:800;border:none;}
+.jianjie h4{font-color:black;font-weight:bold;}
+.jianjie td tr{border:none;}
+.xinxi{position: absolute;bottom: 725;left: 120; width:800;border:none;}
+.xinxi h4{font-color:black;font-weight:bold;}
+.xinxi tr{border:none;}
+.xinxi td{border:none;}
+.result{position: absolute;bottom: 405;left: 120; width:800;border:1px solid #70ad47;}
+.info{position: absolute;bottom: 1025;left: 150; width:600;border-left:none;border-right:none;border-top:2px solid #70ad47;border-bottom:2px solid #70ad47;}
+.info td{text-align:left;font-weight:bold;width:300;border-left:none;border-right:none;border-top:2px solid #70ad47;border-bottom:2px solid #70ad47;}
+.info tr{border-left:none;border-right:none;border-top:2px solid #70ad47;border-bottom:2px solid #70ad47;}
+.result th{border:1px solid #70ad47;}
+.result h4{font-color:black;font-weight:bold;}
+.fenxi{position: absolute;bottom: 80;left: 120; width:800;border:1px solid #70ad47;}
+.fenxi td{border:1px solid #70ad47;text-align:center;}
+.fenxi h4{font-color:black;font-weight:bold;}
+.fenxi img{padding:10;}
+.getizhidao{position: absolute;bottom: 1065;left: 120; border:none;}
+.getizhidao td tr{border:none;}
+.getizhidao b{font-color:black;font-weight:bold;padding:5;}
+.timestamp{position: absolute;bottom: 150;left: 120; border:none;}
+.timestamp td tr{border:none;}
+.timestamp td{width:185;}
+.timestamp b{font-color:black;font-weight:bold;}
+</style>
+<body>
+<center>
+
+<div class="container" width="820px">
+<div class="row">
+<!--startprint-->
+<!-- report page1 --> 
+<div class="con_img"><img src="http://www.kunkundashen.cn/static/imgs/vdr-result-bg.png"/>
+<table class="table info">
+       <tr>
+       <td>姓名：{{applicant_print_prev.name}}</td>
+       <td>联系电话：{{applicant_print_prev.telphone}}</td>
+    </tr>
+       <tr>
+       <td>年龄：{{applicant_print_prev.age}}</td>
+        <td>接收日期：{{applicant_print_prev.received_date|date:"Y-m-d H:i:s"}}</td>
+    </tr>
+     <tr>
+       <td>性别：{{applicant_print_prev.sex}}</td>
+       <td>报告日期：{{applicant_print_prev.timestamp|date:"Y-m-d H:i:s"}}</td>
+    </tr>
+       <tr>
+       <td>医生：{{applicant_print_prev.doctor}}</td>
+        <td>送检医院：{{applicant_print_prev.hospital}}</td>
+    </tr>
+  </table>
+  
+  <table class="jianjie">
+       <tr>
+       <td><h4>项目简介</h4></td>
+     
+    </tr>
+       <tr>
+       <td><p>&nbsp;&nbsp;&nbsp;&nbsp;维生素D是一种脂溶性维生素，为固醇类衍生物，作用于小肠黏膜、肾及肾小管，促进钙、磷吸收，有利于新骨形成及钙化。目前维生素D缺乏已经为了我国一个非常普遍的现象。其中，儿童缺乏情况异常严重，中国疾控中心调查显示：婴幼儿维生素D缺乏和不足的发生率在80%~90%之间；3-12岁儿童有81.8%存在维生素D缺乏或不足。</p></td>
+        
+    </tr>
+  </table>
+  
+  <table class="xinxi">
+       <tr>
+       <td><h4>检测信息</h4></td>
+     
+    </tr>
+       <tr>
+       <td><b>&nbsp;&nbsp;&nbsp;&nbsp;送检样本：</b>口腔黏膜上皮细胞</td> 
+    </tr>
+           <tr>
+       <td><b>&nbsp;&nbsp;&nbsp;&nbsp;样本评估：</b>{{applicant_print_prev.assess}}</td> 
+    </tr>
+           <tr>
+       <td><b>&nbsp;&nbsp;&nbsp;&nbsp;检测项目：</b>维生素D及钙吸收能力检测</td> 
+    </tr>
+           <tr>
+       <td><b>&nbsp;&nbsp;&nbsp;&nbsp;检测基因：</b>VDR{Apal,Taql,Bsml,Fokl}</td> 
+    </tr>       <tr>
+       <td><b>&nbsp;&nbsp;&nbsp;&nbsp;检测方法：</b>{{applicant_print_prev.method}}</td> 
+    </tr>
+ 
+  </table>
+  <table class="table result">
+  <caption><b><h4>检测结果</h4></b></caption>
+  <thead>
+    <tr>
+      <th>检测基因</th>
+      <th>基因功能</th>
+      <th>检测位点</th>
+      <th>检测数值</th>
+      <th>检测结果</th>
+    </tr>
+  </thead>
+  <tbody>
+       <tr>
+      <th style="text-align: center;" rowspan="5"><br/><br/>VDR</th>
+      <td style="width: 350px;" rowspan="5">
+      <p>VDR(Apal/Taql)突变引起受体与VD结合不稳定，从而导致VD和钙吸收障碍。<br/>
+VDR(Bsml/Fokl)突变引起VDR基因的活性降低，VD受体数量减少，从而导致VD及钙磷吸收代谢 障碍，佝偻病、骨质疏松等疾病风险上升。</p>
+      </td>
+      <th>Apal</th>
+      <th>{{applicant_print_prev.apal}}</th>
+      <th>{{applicant_print_prev.apal_type}}</th>
+    </tr>
+       <tr>
+      <th>Taql</th>
+      <th>{{applicant_print_prev.taql}}</th>
+      <th>{{applicant_print_prev.taql_type}}</th>
+    </tr>
+        <tr>
+      <th>Bsml</th>
+      <th>{{applicant_print_prev.bsml}}</th>
+      <th>{{applicant_print_prev.bsml_type}}</th>
+    </tr>
+        <tr>
+      <th>Fokl</th>
+      <th>{{applicant_print_prev.fokl}}</th>
+      <th>{{applicant_print_prev.fokl_type}}</th>
+    </tr>
+  </tbody>
+  </table>
+  
+<table class="fenxi">
+  <caption><b><h4>结果分析</h4></b></caption>
+  <tbody>
+<tr>
+<td width="400px;" colspan="2">风险等级评估</td>
+<td width="400px;">基因风险描述</td>
+</tr>
+<tr>
+<td><img width="200" src="http://www.kunkundashen.cn/static/imgs/vdr-risk-level.png" /></td>
+<td><p>
+根据您的基因型预测您风险等级为：Level1<br/>
+<br/>
+基因多态性遗传风险综合评分：Score<br/>
+<br/>
+国内均值：<b style="font-weight:bold;">13.92</b>
+<br/></p>
+</td>
+<td>&nbsp;描述信息</td>
+</tr>
+  </tbody>
+  </table>
+</div>
+<!-- report page2 -->
+<div class="con_img"><img src="http://www.kunkundashen.cn/static/imgs/vdr-result-bg-p2.png"/>
+<table class="getizhidao">
+<tr>
+<td><b>个体化补充建议</b></td>
+</tr><tr>
+<td><b>（根据您的风险等级推荐每日补充量）</b></td>
+</tr><tr>
+<td><b>风险等级： Level2</b></td>
+</tr><tr>
+<td><b>推荐剂量：维生素D：{{applicant_print_prev.Vd}} µg/d</b></td>
+</tr><tr>
+<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;钙：{{applicant_print_prev.Ga}} mg/d</b></td>
+</tr>
+</table>
+<table class="timestamp">
+<tr>
+<td></td><td></td><td></td><td></td><td><b>{{applicant_print_prev.timestamp|date:"Y-m-d H:i:s"}}</b></td>
+</tr>
+</table>
+</div>
+<!-- report page3 --> 
+<div class="con_img">
+<img src="http://www.kunkundashen.cn/static/imgs/vdr-result-bg-p3.png" />
+</div>
+<!-- report page4 --> 
+<div class="con_img">
+<img src="http://www.kunkundashen.cn/static/imgs/vdr-result-bg-p4.png" />
+</div>
+<!-- report page5 --> 
+<div class="con_img">
+<img src="http://www.kunkundashen.cn/static/imgs/vdr-result-bg-p5.png" />
+</div>
+<!-- report page6 --> 
+<div class="con_img">
+<img src="http://www.kunkundashen.cn/static/imgs/vdr-result-bg-p6.png" />
+</div>
+</div>
+<!--endprint-->
+<div class="con_img">
+<center>
+<div align="center" class="noprint">
+<button type="button" onclick="ClosePage()">返回</button>
+<button type="button" onclick="PrintPage()">打印</button>
+</div>
+<script>
+function ClosePage() {
+open(location, '_self').close();
+}
+</script>
+<script>
+function PrintPage() {
+        // 获得body的html
+        bdhtml=window.document.body.innerHTML;
+        // 打印开始的标志
+        sprnstr="<!--startprint-->";
+        // 打印结束的标志
+        eprnstr="<!--endprint-->";
+        // 从打印开始的位置截取到末尾
+        prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+        // 从开始截取到打印结束的位置
+        prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+        // 替换html
+        window.document.body.innerHTML=prnhtml;
+        // 打印
+        window.print();
+        window.location.href='http://www.kunkundashen.cn/applicant_report_is_printable/{{pid}}/';
+    }
+</script>
+</center>
+</div>
+
+
+
+</center>
+</body>
+{% endfor %}
+</html>

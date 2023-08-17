@@ -1,0 +1,112 @@
+{% extends "vdreport/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>VD钙吸收基因报告系统-申请者信息录入</title>     
+       
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ applicants }}</div>
+                                    <div>新增申请者数量!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="../applicant_admin/">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详细</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ usercounts}}</div>
+                                    <div>新增检测结果!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#"">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详细</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ applicant_results}}</div>
+                                    <div>新的检测项目！</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详细</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{ applicant_prescriptions}}</div>
+                                    <div>新增生成报告！</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详细</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+    <!-- /#wrapper -->
+ {% endblock %}

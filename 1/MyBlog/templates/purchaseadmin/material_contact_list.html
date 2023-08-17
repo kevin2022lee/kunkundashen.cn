@@ -1,0 +1,63 @@
+{% extends "purchaseadmin/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>采购信息管理系统-报价信息一览</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+            <div class="well well-sm">
+
+<table class="table table-bordered">
+  <caption><h3><b><center>采购信息管理系统待录入报价信息一览表</b></center></h3></caption>
+    <thead>
+    <tr>
+    <th>物料编号</th>
+      <th>物料名称</th>
+      <th>Cas编号</th>
+      <th>单位</th>
+      <th>包装规格</th>
+      <th>纯度等级</th>
+      <th>联系人</th>
+      <th>联系人电话</th>
+      <th>网站</th>
+      <th>添加新报价</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for view in views %}
+    <tr>
+    <td>{{view.id}}</td>
+     <td>{{view.material}}</td>
+     <td>{{view.cas}}</td>
+     <td>{{view.unit}}</td>
+     <td>{{view.package}}</td>
+     <td>{{view.grade}}</td>
+     <td>{{view.contact}}</td>
+     <td>{{view.telphone}}</td>
+     <td>{{view.website}}</td>
+     <td><a href="http://{{ localip }}/material_contact_quotation/{{view.id}}/" >添加报价</a></td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

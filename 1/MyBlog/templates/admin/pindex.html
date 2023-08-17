@@ -1,0 +1,39 @@
+{% extends "admin/admin-base.html" %} 
+ {% block userdefine %}
+    <title>坤坤大神内容管理系统-图片审核管理</title>     
+   
+            <div class="row">
+                <div class="col-lg-10">
+    {% for pic in pics %}
+        <div class="post">
+            <h3>
+                <a href="#" class="text-info">
+                    {{ pic.imagename }}
+                </a>
+            </h3>
+            <div class="card">
+                <div class="card-header">
+                    发布时间：{{ pic.uploadtime |date:"Y-n-d" }}  作者：{{ pic.u }}
+                </div>
+                <div class="card-body">
+                    <img width="500px" src="http://{{ localip }}/static/{{ pic.imageurl }}" />
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/MyImg/unrecycle/?id={{ pic.id }}'">审核通过</button>
+            <button type="button" class="btn btn-primary btn-xs" onclick="location='http://{{ localip }}/MyImg/delete/?id={{ pic.id }}'">彻底删除</button>
+
+        </div>
+<hr>
+    {% endfor %}
+
+                </div>
+                
+                <!-- /.col-lg-10 -->
+
+          </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+ {% endblock %}

@@ -1,0 +1,86 @@
+<html lang="en">
+ <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   
+	<meta name="keywords" content="2x2,cube,solver" />
+	<meta name="description" content="Calculate the solution of your scrambled 2x2 Rubik's Cube with this online solver. Set up the stickers and let the program find the solution or generate a random shuffle and try to figure" />
+	<meta name="apple-mobile-web-app-title" content="Rubiks Solver">
+	<meta property="og:title" content="Online 2x2 Rubik's Cube Solver" />
+	<meta property="og:url" content="https://rubiks-cube-solver.com/2x2/" />
+	<meta property="og:image" content="https://rubiks-cube-solver.com/images/rubiks-cube-solver.jpg" />
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="Calculate the solution of your scrambled 2x2 Rubik's Cube with this online solver. Set up the stickers and let the program find the solution or generate a random shuffle and try to figure">
+	<link rel="image_src" href="https://rubiks-cube-solver.com/images/rubiks-cube-solver.jpg" />
+	<link rel="canonical" href="https://rubiks-cube-solver.com/2x2/" />
+	
+    <title>二阶国际魔方求解器</title>
+    
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<!--<script src="http://{{ localip }}/site_medias/js/tools/cube2.js"></script> -->
+	 <script src="https://rubiks-cube-solver.com/2x2/cube2.js"></script>
+	<!-- <link type="text/css" rel="stylesheet" href="http://{{ localip }}/site_medias/css/tools/cube2.css"/>-->
+	<link type="text/css" rel="stylesheet" href="https://rubiks-cube-solver.com/2x2/cube2.css"/>
+	<!-- <link type="text/css" rel="stylesheet" href="http://{{ localip }}/site_medias/css/tools/solver.css"/>-->
+	<link type="text/css" rel="stylesheet" href="https://rubiks-cube-solver.com/solver.css"/>
+</head>
+
+<div class="panel panel-info">
+<div class="solverLeftRight">
+		<div class="solverLeft">
+			<div id="wrap2x2Cube">
+				<div class="editcolor0 mode0">
+					<div class="faceUp">
+						<div class="clr3" data-id="12"></div>
+						<div class="clr3" data-id="13"></div>
+						<div class="clr3" data-id="14"></div>
+						<div class="clr3" data-id="15"></div>
+					</div>
+					<div class="faceLeft">
+						<div class="clr1" data-id="5"></div>
+						<div class="clr1" data-id="4"></div>
+						<div class="clr1" data-id="7"></div>
+						<div class="clr1" data-id="6"></div>
+					</div>
+					<div class="faceFront">
+						<div class="clr5" data-id="20"></div>
+						<div class="clr5" data-id="21"></div>
+						<div class="clr5" data-id="22"></div>
+						<div class="clr5" data-id="23"></div>
+					</div>
+					<div class="faceRight">
+						<div class="clr4" data-id="16"></div>
+						<div class="clr4" data-id="17"></div>
+						<div class="clr4" data-id="18"></div>
+						<div class="clr4" data-id="19"></div>
+					</div>
+					<div class="faceBack">
+						<div class="clr0" data-id="9"></div>
+						<div class="clr0" data-id="8"></div>
+						<div class="clr0" data-id="11"></div>
+						<div class="clr0" data-id="10"></div>
+					</div>
+					<div class="faceDown">
+						<div class="clr2" data-id="2"></div>
+						<div class="clr2" data-id="3"></div>
+						<div class="clr2" data-id="0"></div>
+						<div class="clr2" data-id="1"></div>
+					</div> 
+					<strong class="editingColor">Add <span id="editcolorText" class="clr0"></span> fields</strong>
+				</div>
+			</div>
+			<div id="muveletek2x2">
+				<a id="reset2x2">重置</a>
+				<a id="scramble2x2">打乱</a>
+				<a id="solve2x2">求解</a>
+				<a id="edit2x2">编辑</a>
+			</div>
+		</div>
+	</div>
+	<div id="solutionWrap">
+	</div>
+	</div>
+	

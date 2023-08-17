@@ -1,0 +1,43 @@
+<html>  
+<link href="/static/imgs/kunkun_favicon.ico" rel="shortcut icon">
+<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>超级管理员登录</title>
+<head>
+</head>
+
+
+<body style=" background: url(http://global.bing.com/az/hprichbg/rb/RavenWolf_EN-US4433795745_1920x1080.jpg) no-repeat center center fixed; background-size: 100%;">
+
+<form class="form-horizontal" role="form" action="http://www.kunkundashen.cn/superlogin/" method="POST">
+ 
+{% csrf_token %}>
+    <div class="modal-dialog" style="margin-top: 10%;">
+        <div class="modal-content">
+            <div class="modal-header">
+ 
+                <h4 class="modal-title text-center" id="myModalLabel">超级管理员登录</h4>
+            </div>
+            <div class="modal-body" id = "model-body">
+                <div class="form-group">
+ 
+                    <input name="account"  type="text" class="form-control" placeholder="用户名" autocomplete="off" value="root" readonly>
+                </div>
+                <div class="form-group">
+ 
+                    <input name="password" type="password" class="form-control" placeholder="密码" autocomplete="off">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary form-control">登录</button>
+                </div>
+ 
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+
+</form>
+</body>
+</html>

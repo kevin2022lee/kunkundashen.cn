@@ -1,0 +1,93 @@
+{% extends "tools/cube_base.html" %} 
+ {% block content %} 
+ <script src="/static/js/tools/cube2.js"></script>
+ 
+<link rel="stylesheet" type="text/css" href="/static/css/tools/cube2.css" />
+<title>国际标准二阶魔方求解器- 最棒的在线免费app</title>
+ <header>
+ 
+	<div class="header">
+		<div class="headerInner clearfix">
+			<h1>
+			欢迎使用大神魔方求解器V1.05
+			</h1>
+			<div id="puzzleNav">
+				<ul>
+					<li><a href="/cube" class="two active" title="2x2 Solver">2x2</a></li>
+					<li><a href="/cube_3x3/" class="three" title="Rubik's Cube Solver">3x3</a></li>
+					<li><a href="https://cube-solver.com/#id=4" class="four" title="4x4 Solver">4x4</a></li>
+					<li><a href="/cube_pyraminx/" class="pyra" title="Pyraminx Solver">Pyraminx</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="switchViewWrap">
+		<h3>欢迎使用坤坤大神魔方求解器</h3>
+	</div>
+</header>
+<div class="panel panel-info">	
+	<div id="switchViewWrap">
+		<h3>国际标准二阶魔方求解器 </h3>
+	</div>
+	<div class="solverLeftRight">
+		<div class="solverLeft">
+			<div id="wrap2x2Cube">
+				<div class="editcolor0 mode0">
+					<div class="faceUp">
+						<div class="clr3" data-id="12"></div>
+						<div class="clr3" data-id="13"></div>
+						<div class="clr3" data-id="14"></div>
+						<div class="clr3" data-id="15"></div>
+					</div>
+					<div class="faceLeft">
+						<div class="clr1" data-id="5"></div>
+						<div class="clr1" data-id="4"></div>
+						<div class="clr1" data-id="7"></div>
+						<div class="clr1" data-id="6"></div>
+					</div>
+					<div class="faceFront">
+						<div class="clr5" data-id="20"></div>
+						<div class="clr5" data-id="21"></div>
+						<div class="clr5" data-id="22"></div>
+						<div class="clr5" data-id="23"></div>
+					</div>
+					<div class="faceRight">
+						<div class="clr4" data-id="16"></div>
+						<div class="clr4" data-id="17"></div>
+						<div class="clr4" data-id="18"></div>
+						<div class="clr4" data-id="19"></div>
+					</div>
+					<div class="faceBack">
+						<div class="clr0" data-id="9"></div>
+						<div class="clr0" data-id="8"></div>
+						<div class="clr0" data-id="11"></div>
+						<div class="clr0" data-id="10"></div>
+					</div>
+					<div class="faceDown">
+						<div class="clr2" data-id="2"></div>
+						<div class="clr2" data-id="3"></div>
+						<div class="clr2" data-id="0"></div>
+						<div class="clr2" data-id="1"></div>
+					</div> 
+					<strong class="editingColor">Add <span id="editcolorText" class="clr0"></span> fields</strong>
+				</div>
+			</div>
+			<div id="muveletek2x2">
+				<a id="reset2x2">重置</a>
+				<a id="scramble2x2">打乱</a>
+				<a id="solve2x2">求解</a>
+				<a id="edit2x2">编辑</a>
+			</div>
+		</div>
+	
+	</div>
+	<div id="solutionWrap">
+	</div>
+	
+</div>
+<!-- <script type="text/javascript">
+var _0x56d5 = ["click", "#reset2x2", "#scramble2x2", "#solve2x2", "#edit2x2", "ready", "data-id", "attr", "mousedown", "#wrap2x2Cube > div > div > div", "-webkit-transform", "rotate(", "deg)", "css", "parent", "log", "<div class=\"editcolor", " mode", "\"><div class=\"faceUp\"><div class=\"clr", "\" data-id=\"12\"></div><div class=\"clr", "\" data-id=\"13\"></div><div class=\"clr", "\" data-id=\"14\"></div><div class=\"clr", "\" data-id=\"15\"></div></div>", "<div class=\"faceLeft\"><div class=\"clr", "\" data-id=\"5\"></div><div class=\"clr", "\" data-id=\"4\"></div><div class=\"clr", "\" data-id=\"7\"></div><div class=\"clr", "\" data-id=\"6\"></div></div>", "<div class=\"faceFront\"><div class=\"clr", "\" data-id=\"20\"></div><div class=\"clr", "\" data-id=\"21\"></div><div class=\"clr", "\" data-id=\"22\"></div><div class=\"clr", "\" data-id=\"23\"></div></div>", "<div class=\"faceRight\"><div class=\"clr", "\" data-id=\"16\"></div><div class=\"clr", "\" data-id=\"17\"></div><div class=\"clr", "\" data-id=\"18\"></div><div class=\"clr", "\" data-id=\"19\"></div></div>", "<div class=\"faceBack\"><div class=\"clr", "\" data-id=\"9\"></div><div class=\"clr", "\" data-id=\"8\"></div><div class=\"clr", "\" data-id=\"11\"></div><div class=\"clr", "\" data-id=\"10\"></div></div>", "<div class=\"faceDown\"><div class=\"clr", "\" data-id=\"2\"></div><div class=\"clr", "\" data-id=\"3\"></div><div class=\"clr", "\" data-id=\"0\"></div><div class=\"clr", "\" data-id=\"1\"></div></div> <strong class=\"editingColor\">Add <span id=\"editcolorText\" class=\"clr", "\"></span> fields</strong>  </div>", "html", "#wrap2x2Cube", "activeButton", "addClass", "removeClass", "<h2>Solved</h2>", "#solutionWrap", "", "random", "floor", "length", "dosolve()", "ube-sol", "indexOf", "domain", " ", "charAt", "URF", " 2'", "\t<div class=\"wrapKicsiCube\"><div class=\"kicsiFaceUp\"><div class=\"clr", "\" data-field=\"12\"></div><div class=\"clr", "\" data-field=\"13\"></div><div class=\"clr", "\" data-field=\"14\"></div><div class=\"clr", "\" data-field=\"15\"></div></div>", "<div class=\"kicsiFaceLeft\"><div class=\"clr", "\" data-field=\"5\"></div><div class=\"clr", "\" data-field=\"4\"></div><div class=\"clr", "\" data-field=\"7\"></div><div class=\"clr", "\" data-field=\"6\"></div></div>", "<div class=\"kicsiFaceFront\"><div class=\"clr", "\" data-field=\"20\"></div><div class=\"clr", "\" data-field=\"21\"></div><div class=\"clr", "\" data-field=\"22\"></div><div class=\"clr", "\" data-field=\"23\"></div></div>", "<div class=\"kicsiFaceRight\"><div class=\"clr", "\" data-field=\"16\"></div><div class=\"clr", "\" data-field=\"17\"></div><div class=\"clr", "\" data-field=\"18\"></div><div class=\"clr", "\" data-field=\"19\"></div></div>", "<div class=\"kicsiFaceBack\"><div class=\"clr", "\" data-field=\"9\"></div><div class=\"clr", "\" data-field=\"8\"></div><div class=\"clr", "\" data-field=\"11\"></div><div class=\"clr", "\" data-field=\"10\"></div></div>", "<div class=\"kicsiFaceDown\"><div class=\"clr", "\" data-field=\"2\"></div><div class=\"clr", "\" data-field=\"3\"></div><div class=\"clr", "\" data-field=\"0\"></div><div class=\"clr", "\" data-field=\"1\"></div></div></div><div class=\"wrapTekeresArrow\"><div class=\"tekeres tekeres", "\"></div></div>", "<h2>Please scramble the cube first!</h2>", "<h4>", "</h4>", "<div class=\"solutionStep\">", "<h2>Step ", ": <strong>", "</strong></h2>", "</div>", "<div class=\"solutionStep\"><h2>Done in ", " steps!</h2>", "<h2>Thinking</h2>", "calcperm()"];
+
+alert(_0x56d5[65]);
+</script> -->
+{% endblock %}

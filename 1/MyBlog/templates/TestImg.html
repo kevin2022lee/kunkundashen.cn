@@ -1,0 +1,11 @@
+
+<form role="form" action="http://{{ localip }}/UploadImage/" method="POST" enctype="multipart/form-data" target="hidden_frame"> {% csrf_token %}
+ <div class="form-group">
+<input type="file" name="ImageField" class="file" id="ImageField" size="28"/> 
+<label for="ImageField" id="image_errors"></label>
+</div>
+<div id="txt">
+</div>
+<button id="UploadBtn" type="submit" class="btn btn-primary" onclick="startTime()">上传</button>
+<label for="UploadBtn" id="upload_tips"></label>
+</form> 

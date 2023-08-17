@@ -1,0 +1,76 @@
+{% extends "purchaseadmin/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>诺森医学采购管理系统-化学试剂报价查询</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+<form class="form" action="" method="GET">
+<center>
+<div class="panel panel-primary">
+<label>输入物料名称：</label>
+<input name="code" id="code" class="input" type="text" placeholder="输入物料名称"  value="" />
+<button class="btn btn-primary" type="submit">模糊检索物料</button>
+</div>
+</form>
+ <div class="well well-sm">
+<table class="table table-bordered">
+  <caption><h3><b><center>诺森医学采购管理系统系统已报价物料信息一览表</b></center></h3></caption>
+    <thead>
+    <tr>
+      <th>系统编号</th>
+      <th>物料名称</th>
+      <th>cas</th>
+      <th>单位</th>
+      <th>等级</th>
+      <th>包装规格</th>
+      <th>联系人</th>
+      <th>电话</th>
+      <th>网站</th>
+      <th>公司</th>
+      <th>货号</th>
+      <th>参考成本</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for material in materials %}
+    <tr>
+     <td>{{material.id}}</td>
+     <td>{{material.material}}</td>
+     <td>{{material.cas}}</td>
+     <td>{{material.unit}}</td>     
+     <td>{{material.grade}}</td>
+     <td>{{material.package}}</td>
+     <td>{{material.contact}}</td>
+     <td>{{material.telphone}}</td>
+     <td>{{material.website}}</td>
+     <td>{{material.company}}</td>
+     <td>{{material.price}}</td>
+     <td>{{material.policy}}</td>
+     <td><a target="_blank" href="#"/>导出excle</a></td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

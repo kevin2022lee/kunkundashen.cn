@@ -1,0 +1,93 @@
+{% extends "vdreport/vdreport-base.html" %} 
+ {% block userdefine %}
+    <title>维生素D及钙吸收能力基因检测报告系统-结果录入</title>     
+       <head>
+    <title></title>
+</head>
+            <div class="row">
+            <div class="well well-sm">
+             <form  action="http://{{ localip }}/applicantresultpost/{{aid}}/" method="POST">{% csrf_token %}
+<table class="table table-bordered">
+  <caption><h3><b><center>维生素D及钙吸收能力基因检测报告检测结果录入</b></center></h3></caption>
+  <thead>
+    <tr>
+      <th>项目</th>
+      <th>结果值</th>
+      <th>项目</th>
+      <th>结果值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> Apal：</td>
+      <td><input id="typename" type="text" onkeypress="return /[A-Z]/i.test(event.key)" placeholder="Apal" class="title" name="Apal" value="" /></td>
+      <td>Apal_type：</td>
+      <td><select id="Apal_type"  name="Apal_type" >
+      <option value="野生型">野生型</option>
+      <option value="突变型">突变型</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td> Taql：</td>
+      <td><input id="typename" type="text" onkeypress="return /[A-Z]/i.test(event.key)" placeholder="Taql" class="title" name="Taql" value="" /></td>
+      <td>Taql_type：</td>
+      <td><select id="Taql_type" name="Taql_type">
+      <option value="野生型">野生型</option>
+      <option value="突变型">突变型</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Bsml</td>
+      <td>
+      <input id="typename" type="text" onkeypress="return /[A-Z]/i.test(event.key)" placeholder="Bsml" class="title" name="Bsml" value="" />
+      </td>
+      <td>Bsml_type：</td>
+      <td><select id="Bsml_type" name="Bsml_type">
+      <option value="野生型">野生型</option>
+      <option value="突变型">突变型</option>
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td> Fokl：</td>
+      <td><input id="typename" type="text" onkeypress="return /[A-Z]/i.test(event.key)" placeholder="Fokl" class="title" name="Fokl" value="" /></td>
+      <td>Fokl_type：</td>
+      <td><select id="Fokl_type" name="Fokl_type">
+      <option value="野生型">野生型</option>
+      <option value="突变型">突变型</option>
+      </select>
+      </td>
+    </tr>
+    <hr/>
+    <td colspan="4">
+    <center>
+      <button type="submit" class="btn btn-primary btn-xs">录入结果</button>
+      <button type="reset" class="btn btn-primary btn-xs">清除信息</button>
+    </center>
+    </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                   
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                   
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+          
+
+
+    </div>
+
+    <!-- /#wrapper -->
+{% endblock %}

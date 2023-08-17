@@ -1,0 +1,28 @@
+{% extends "admin/admin-base.html" %} 
+ {% block userdefine %}
+    <title>坤坤大神内容管理系统-文章分类增加</title>     
+     
+            <div class="row">
+                <div class="col-lg-10">
+                  <div class="well well-sm">
+                  <form action="http://{{ localip }}/MyBlog/classifypost/" method="POST">{% csrf_token %}
+                  
+                  <input id="typename" type="text" placeholder="请输入分类名称" class="title" name="typename" value="" />
+                 
+                  <button type="submit" class="btn btn-primary btn-xs">提交</button>
+                  </form>
+                  <br/>
+                  <button type="button" class="btn btn-primary btn-xs" onclick="window.location.href = 'http://www.kunkundashen.cn/classify_admin/'">返回</button>
+                  </div>
+
+                </div>
+                
+                <!-- /.col-lg-10 -->
+
+          </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+ {% endblock %}
